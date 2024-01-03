@@ -1,4 +1,4 @@
-package main.java.MeusExercícios.list.ordenação;
+package MeusExercícios.list.ordenação;
 
 import java.util.ArrayList;
 import java.util.Collections;

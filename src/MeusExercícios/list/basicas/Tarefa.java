@@ -1,4 +1,4 @@
-package main.java.MeusExercícios.list.basicas;
+package MeusExercícios.list.basicas;
 
 public class Tarefa {
     // atributo

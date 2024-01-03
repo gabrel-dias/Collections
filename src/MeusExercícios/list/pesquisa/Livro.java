@@ -1,4 +1,4 @@
-package main.java.MeusExercícios.list.pesquisa;
+package MeusExercícios.list.pesquisa;
 
 public class Livro {
     // atributos

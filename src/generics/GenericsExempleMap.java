@@ -1,4 +1,4 @@
-package main.java.generics;
+package generics;
 
 import java.util.HashMap;
 import java.util.Map;

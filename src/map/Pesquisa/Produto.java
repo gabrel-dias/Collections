@@ -1,4 +1,4 @@
-package main.java.map.Pesquisa;
+package map.Pesquisa;
 
 public class Produto {
   //atributos

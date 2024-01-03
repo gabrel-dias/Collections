@@ -1,4 +1,4 @@
-package main.java.map.Ordenacao;
+package map.Ordenacao;
 
 public class Evento {
   //atributos
