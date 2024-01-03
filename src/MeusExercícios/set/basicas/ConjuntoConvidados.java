@@ -17,14 +17,44 @@ public class ConjuntoConvidados {
 
     }
 
-    public void removerConvidadoPorCodigoConvite(int codigoConvite){
+    // TODO entender porque esse método não está rodando
+    public void removerConvidadoPorCodigoConvite(int codigoConvite) {
         Convidado convidadoRemover = null;
         for (Convidado c : convidadoSet) {
             if (c.getCodigoConvite() == codigoConvite) {
                 convidadoRemover = c;
                 break;
             }
+            convidadoSet.remove(convidadoRemover);
         }
     }
 
+    public int contarConvidados() {
+        return convidadoSet.size();
+    }
+
+    public void exibirConvidados() {
+        for (Convidado c : convidadoSet) {
+            System.out.println(c);
+        }
+    }
+//TODO treinar ordenação por código do convidado
+    public void ordenar(int codigoConvidado) {
+
+    }
+
+    public static void main(String[] args) {
+        ConjuntoConvidados convidados = new ConjuntoConvidados();
+
+        convidados.adicionarConvidado("gabrel", 23);
+        convidados.adicionarConvidado("brune", 22);
+        convidados.adicionarConvidado("predo", 16);
+        convidados.adicionarConvidado("luzia", 85);
+
+        convidados.exibirConvidados();
+        convidados.removerConvidadoPorCodigoConvite(85);
+        System.out.println("");
+        convidados.exibirConvidados();
+
+    }
 }

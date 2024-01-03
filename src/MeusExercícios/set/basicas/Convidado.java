@@ -1,6 +1,6 @@
 package MeusExercícios.set.basicas;
 
-public class Convidado {
+public class Convidado implements Comparable<Convidado> {
     // atributos
     private String nome;
     private int codigoConvite;
@@ -18,6 +18,11 @@ public class Convidado {
 
     public int getCodigoConvite() {
         return codigoConvite;
+    }
+
+    @Override
+    public int compareTo(Convidado c) {
+        return this.codigoConvite - c.getCodigoConvite();
     }
 
     @Override
