@@ -31,7 +31,8 @@ public class Pessoa implements Comparable<Pessoa> {
     // public int compareTo(Pessoa p) {
     // return this.idade - p.idade;
     // }
-    // TODO com a implementação da Comparable, só é possível utilizar um compareTo()
+    
+    // com a implementação da Comparable, só é possível utilizar um compareTo()
     // por vez
 
     public String getNome() { // acessores

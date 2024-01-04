@@ -22,7 +22,7 @@ public class Convidado implements Comparable<Convidado> {
 
     @Override
     public int compareTo(Convidado c) {
-        return this.codigoConvite - c.getCodigoConvite();
+        return Integer.compare(codigoConvite, c.getCodigoConvite());
     }
 
     @Override
