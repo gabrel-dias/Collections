@@ -1,7 +1,5 @@
 package MeusExercícios.set.basicas;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -41,7 +39,6 @@ public class ConjuntoConvidados {
     }
     //TODO treinar ordenação por código do convidado
     public void ordenar(int codigoConvidado) {
-        Collections.sort(null);
     }
 
     public static void main(String[] args) {
