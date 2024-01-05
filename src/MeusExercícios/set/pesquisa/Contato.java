@@ -1,7 +1,5 @@
 package MeusExercícios.set.pesquisa;
 
-import java.util.Objects;
-
 public class Contato {
     private String nome;
     private int numeroDeTelefone;
@@ -60,7 +58,7 @@ public class Contato {
             return false;
         return true;
     }
-
+//TODO entender qual a diferença desses dois conjuntos (acima e abaixo) de hashCode e de equals
 //     @Override
 //     public int hashCode() {
 //         return Objects.hash(getNome());
