@@ -1,5 +1,7 @@
 package MeusExercícios.set.pesquisa;
 
+import java.util.Objects;
+
 public class Contato {
     private String nome;
     private int numeroDeTelefone;
