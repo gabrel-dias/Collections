@@ -1,4 +1,4 @@
-package MeusExercícios.ExercíciosPropostos;
+package MeusExercícios.ExercíciosPropostos.respostas;
 
 import java.util.ArrayList;
 import java.util.Iterator;
