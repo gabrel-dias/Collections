@@ -26,7 +26,24 @@ public class ExemploSet {
             double next = iterator.next();
             soma += next;
         }
-        System.out.printf("Exibir a soma dos elementos do conjunto : %.2f", soma);
+        System.out.printf("Exibir a soma dos elementos do conjunto : %.2f\n", soma);
+        // o método size() retorna a quantidade de elementos presentes no conjunto
+        System.out.printf("A média dos elementos no conjunto é: %.2f\n", soma / notasSet.size());
+        System.out.println("Removendo a nota 3.6...");
+        notasSet.remove(3.6);
+        System.out.println(notasSet);
+        System.out.println("Removendo notas menores que 7 e mostrando a lista...");
+
+        Iterator<Double> iterator2 = notasSet.iterator();
+        while (iterator2.hasNext()) {
+            double next = iterator2.next();
+            if (next < 7) { // se a condição for verdadeira, o elemento que for abaixo de 7 será removido
+                iterator2.remove();
+            }
+        }
+        // apesar de que seja criado um outro iterator() no conjunto, o iterador mantém
+        // um controle sobre o conjunto
+        System.out.println(notasSet);
 
     }
 
