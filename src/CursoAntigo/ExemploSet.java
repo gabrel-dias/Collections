@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class ExemploSet {
@@ -45,6 +46,16 @@ public class ExemploSet {
         // um controle sobre o conjunto
         System.out.println(notasSet);
 
-    }
+        System.out.println("Exibir os elementos do conjunto em sua ordem de inserção... ");
+        Set<Double> notasLinkedHash = new LinkedHashSet<>(); // não é possível manter uma ordem utilizando o HashSet,
+                                                             // para isso, é necessário utilizar o LinkedHashSet
+        notasLinkedHash.add(9.3);
+        notasLinkedHash.add(7d);
+        notasLinkedHash.add(5d);
+        notasLinkedHash.add(3.6);
+        notasLinkedHash.add(7d); //ignorado por ser igual
+        notasLinkedHash.add(8.5);
+        System.out.println(notasLinkedHash);
+    } 
 
 }
