@@ -1,6 +1,6 @@
 package CursoAntigo;
 
-// As Sets são utilizadas para criar uma lista de elementos que não irão receber alterações
+// Os Sets (conjuntos) são utilizadas para criar uma lista de elementos que não irão receber alterações de inclusão ou exclusão
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
@@ -40,10 +40,10 @@ public class ExemploSet {
             double next = iterator2.next();
             if (next < 7) { // se a condição for verdadeira, o elemento que for abaixo de 7 será removido
                 iterator2.remove();
+                // apesar de que seja criado um outro iterator() no conjunto, o que será
+                // excluído é o dado do conjunto e não do iterator, pois o mesmo não é um Set
             }
         }
-        // apesar de que seja criado um outro iterator() no conjunto, o iterador mantém
-        // um controle sobre o conjunto
         System.out.println(notasSet);
 
         System.out.println("Exibir os elementos do conjunto em sua ordem de inserção... ");
@@ -53,9 +53,9 @@ public class ExemploSet {
         notasLinkedHash.add(7d);
         notasLinkedHash.add(5d);
         notasLinkedHash.add(3.6);
-        notasLinkedHash.add(7d); //ignorado por ser igual
+        notasLinkedHash.add(7d); // ignorado por ser igual
         notasLinkedHash.add(8.5);
         System.out.println(notasLinkedHash);
-    } 
+    }
 
 }
