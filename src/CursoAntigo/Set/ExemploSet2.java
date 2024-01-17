@@ -1,23 +1,66 @@
 package CursoAntigo.Set;
 
+import java.util.Comparator;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class ExemploSet2 {
     public static void main(String[] args) {
-        System.out.println("Ordem de séries aleatória...");
-        Set<Serie> seriesHashSet = new HashSet<>() {
+        System.out.println("Ordem aleatória...");
+        Set<Serie> seriesHashSet = new HashSet<>() { // HashSet gera uma ordem aleatória dos elementos do conjunto
             {
                 add(new Serie("got", "fantasia", 60));
                 add(new Serie("dark", "drama", 60));
                 add(new Serie("friends", "comédia", 24));
             }
         };
-        System.out.println(seriesHashSet);
+        for (Serie serie : seriesHashSet) {
+            System.out.println(serie.getNome() + " - " + serie.getGenero() + " - " + serie.getTempoEp());
+        }
+
+        System.out.println("\nOrdem de inserção...");
+        Set<Serie> seriesLinkedHashSet = new LinkedHashSet<>() { // LinkedHashSet suporta usar a ordem de inserção
+            {
+                add(new Serie("got", "fantasia", 60));
+                add(new Serie("dark", "drama", 60));
+                add(new Serie("friends", "comédia", 24));
+            }
+        };
+        for (Serie serie : seriesLinkedHashSet) {
+            System.out.println(serie.getNome() + " - " + serie.getGenero() + " - " + serie.getTempoEp());
+
+        }
+
+        System.out.println("\nOrdem natural (tempoEp)...");
+        Set<Serie> seriesTreeSet = new TreeSet<>() {
+            {
+                add(new Serie("got", "fantasia", 60));
+                add(new Serie("dark", "drama", 60));
+                add(new Serie("friends", "comédia", 24));
+
+            }
+        };
+        for (Serie serie : seriesTreeSet) {
+            System.out.println(serie.getNome() + " - " + serie.getGenero() + " - " + serie.getTempoEp());
+        }
+        
+        System.out.println("\nComparar por nome/genero/tempoEp...");
+        Set<Serie> seriesComparator = new TreeSet<>(new ComparatorNomeGeneroTempo());
+        seriesComparator.addAll(seriesHashSet);
+        for (Serie serie : seriesTreeSet) {
+            System.out.println(serie.getNome() + " - " + serie.getGenero() + " - " + serie.getTempoEp());
+        }
+
+        //TODO ordenar por gênero
+        //TODO ordenar por tempoEp
+        
+        
     }
 }
 
-class Serie {
+class Serie implements Comparable<Serie> {
     private String nome;
     private String genero;
     private int tempoEp;
@@ -79,6 +122,35 @@ class Serie {
         if (tempoEp != other.tempoEp)
             return false;
         return true;
+    }
+
+    @Override
+    public int compareTo(Serie o) {
+        int tempoEp = Integer.compare(this.getTempoEp(), o.getTempoEp()); // variável que recebe a diferença entre o
+                                                                          // atributo e o objeto
+
+        if (tempoEp != 0) // se o resultado for diferente !=0, retornará o valor da variável que será
+                          // usado para comparar
+            return tempoEp;
+
+        return this.getGenero().compareTo(o.getGenero());
+    }
+
+}
+
+class ComparatorNomeGeneroTempo implements Comparator<Serie> {
+
+    @Override
+    public int compare(Serie o1, Serie o2) {
+        int nome = o1.getNome().compareTo(o2.getNome()); // primeiro compara se os nomes são diferentes
+        if (nome != 0)
+            return nome;
+
+        int genero = o1.getNome().compareTo(o2.getNome()); // compara se os gêneros são diferentes
+        if (nome != 0)
+            return genero;
+
+        return Integer.compare(o1.getTempoEp(), o2.getTempoEp()); // caso os dois sejam iguais, é comparado por tempoEp
     }
 
 }
