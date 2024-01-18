@@ -100,6 +100,7 @@ class Serie implements Comparable<Serie> {
         result = prime * result + tempoEp;
         return result;
     }
+    //TODO REMOVER ERRO AQUI
 
     // também não sei
     @Override
