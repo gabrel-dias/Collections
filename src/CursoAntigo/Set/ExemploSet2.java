@@ -34,7 +34,7 @@ public class ExemploSet2 {
         }
 
         System.out.println("\nOrdem natural (tempoEp)...");
-        Set<Serie> seriesTreeSet = new TreeSet<>() {
+        Set<Serie> seriesTreeSet = new TreeSet<>() { // TreeSet permite organizar com qualquer critério definido
             {
                 add(new Serie("got", "fantasia", 60));
                 add(new Serie("dark", "drama", 60));
@@ -45,7 +45,7 @@ public class ExemploSet2 {
         for (Serie serie : seriesTreeSet) {
             System.out.println(serie.getNome() + " - " + serie.getGenero() + " - " + serie.getTempoEp());
         }
-        
+
         System.out.println("\nComparar por nome/genero/tempoEp...");
         Set<Serie> seriesComparator = new TreeSet<>(new ComparatorNomeGeneroTempo());
         seriesComparator.addAll(seriesHashSet);
@@ -53,10 +53,12 @@ public class ExemploSet2 {
             System.out.println(serie.getNome() + " - " + serie.getGenero() + " - " + serie.getTempoEp());
         }
 
-        //TODO ordenar por gênero
-        //TODO ordenar por tempoEp
-        
-        
+        System.out.println("\nOrdenar por gênero...");
+        Set<Serie> generoSeries = new TreeSet<>();
+        generoSeries.addAll(seriesHashSet);
+        for (Serie serie : generoSeries) {
+            System.out.println(serie.getNome() + " - " + serie.getGenero() + " - " + serie.getTempoEp());
+        }
     }
 }
 
@@ -151,6 +153,15 @@ class ComparatorNomeGeneroTempo implements Comparator<Serie> {
             return genero;
 
         return Integer.compare(o1.getTempoEp(), o2.getTempoEp()); // caso os dois sejam iguais, é comparado por tempoEp
+    }
+
+}
+
+class ComparatorGenero implements Comparator<Serie> {
+
+    @Override
+    public int compare(Serie o1, Serie o2) {
+        return o1.getGenero().compareToIgnoreCase(o2.getGenero());
     }
 
 }
