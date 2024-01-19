@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+// List é uma coleção que permite a inclusão de elementos duplicados e fornece métodos úteis para adicionar, remover e substituir elementos com base no seu índice.
+// Fornece também algoritmos para manipulação de elementos como ordenação (sort), embaralhamento (shuffle), reversão (reverse) e busca binária (binarySearch).
 public class ExemploOrdenacaoList {
     public static void main(String[] args) {
         List<Gato> catsList = new ArrayList<>() {
@@ -18,36 +20,29 @@ public class ExemploOrdenacaoList {
         };
         System.out.println("--------ordem de inserção-------");
         System.out.println(catsList);
-        System.out.println("");
-        System.out.println("--------ordem aleatória-------");
+        System.out.println("\n--------ordem aleatória-------");
         Collections.shuffle(catsList);
         System.out.println(catsList);
-        System.out.println("");
-        System.out.println("(------ordem natural----");
+        System.out.println("(\n------ordem natural----");
         Collections.sort(catsList);
         System.out.println(catsList);
-        System.out.println("");
-        System.out.println("------------ordem por idade-----------");
-        // Collections.sort(catsList, new ComparatorIdadeGato); também é possível
-        // ordenar por esse método, mas
-        // é preciso passar uma List e um Comparator, que deve ser criado em uma classe
-        // separada. Caso optar pela Collections, o compilador avisará que existe (ou
-        // não) o mesmo método sendo utilizado.
-        catsList.sort(new ComparatorIdade()); // ao utilizar a classe criada do Comparator, lembrar sempre de intanciar
+        System.out.println("\n------------ordem por idade-----------"); // para esse tipo de ordenação é preciso
+                                                                        // utilizar um Comparator
+
+        // Collections.sort(catsList, new ComparatorIdadeGato);
+        catsList.sort(new ComparatorIdade()); // ao utilizar a classe de um Comparator, lembrar SEMPRE de intanciá-la
                                               // usando o "new".
         System.out.println(catsList);
-        System.out.println("");
-        System.out.println("------------ordem por cor-----------");
+        System.out.println("\n------------ordem por cor-----------");
         catsList.sort(new ComparatorCor());
         System.out.println(catsList);
-        System.out.println("");
-        System.out.println("------------ordem por nome-----------"); // mesma coisa que o Collections.sort() faz, mas
-                                                                     // dessa vez utilizando um Comparator.
+        System.out.println("\n------------ordem por nome-----------"); // mesma coisa que o Collections.sort() faz, mas
+                                                                       // dessa vez utilizando um Comparator.
         catsList.sort(new ComparatorNome());
         System.out.println(catsList);
-        System.out.println("");
-        System.out.println("-------ordenar por nome, cor e idade-----------");
-        catsList.sort(new ComparatorNomeIdadeCor());
+        System.out.println("\n-------ordenar por nome, cor e idade-----------");
+        catsList.sort(new ComparatorNomeIdadeCor()); // no método compare(), fazer uma lógica de ordenação que analise
+                                                     // todos os critérios para comparação
         System.out.println(catsList);
     }
 
@@ -81,13 +76,15 @@ class Gato implements Comparable<Gato> {
     }
 
     @Override
-    public int compareTo(Gato o) {
+    public int compareTo(Gato o) { // será utilizado para comparar pelo atributo nome
         return this.getNome().compareToIgnoreCase(o.getNome());
     }
 
 }
 
-class ComparatorIdade implements Comparator<Gato> {
+class ComparatorIdade implements Comparator<Gato> { // o Comparable e seu método compareTo(), só podem ser implementados
+                                                    // uma única vez por classe, por isso é preciso utilizar outras
+                                                    // classes com o Comparator e seu método compare() implementados
 
     @Override
     public int compare(Gato g1, Gato g2) {

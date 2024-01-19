@@ -9,7 +9,7 @@ import java.util.TreeSet;
 public class ExemploSet2 {
     public static void main(String[] args) {
         System.out.println("Ordem aleatória...");
-        Set<Serie> seriesHashSet = new HashSet<>() { // HashSet gera uma ordem aleatória dos elementos do conjunto
+        Set<Serie> seriesHashSet = new HashSet<>() { // HashSet gera uma ordem aleatória dos elementos do conjunto, mas possui um eficiente desempenho de busca 
             {
                 add(new Serie("got", "fantasia", 60));
                 add(new Serie("dark", "drama", 60));
@@ -21,7 +21,7 @@ public class ExemploSet2 {
         }
 
         System.out.println("\nOrdem de inserção...");
-        Set<Serie> seriesLinkedHashSet = new LinkedHashSet<>() { // LinkedHashSet suporta usar a ordem de inserção
+        Set<Serie> seriesLinkedHashSet = new LinkedHashSet<>() { // LinkedHashSet suporta usar a ordem de inserção e também tem um bom desempenho de busca
             {
                 add(new Serie("got", "fantasia", 60));
                 add(new Serie("dark", "drama", 60));
@@ -34,7 +34,7 @@ public class ExemploSet2 {
         }
 
         System.out.println("\nOrdem natural (tempoEp)...");
-        Set<Serie> seriesTreeSet = new TreeSet<>() { // TreeSet permite organizar com qualquer critério definido
+        Set<Serie> seriesTreeSet = new TreeSet<>() { // TreeSet mantém os elementos armazenados automaticamente em ordem crescente
             {
                 add(new Serie("got", "fantasia", 60));
                 add(new Serie("dark", "drama", 60));
@@ -54,7 +54,17 @@ public class ExemploSet2 {
         }
 
         System.out.println("\nOrdenar por gênero...");
-        Set<Serie> generoSeries = new TreeSet<>();
+        Set<Serie> generoSeries = new TreeSet<>(new ComparatorGenero()) { // além de implementar o Set, é preciso
+                                                                          // implementar o construtor da classe que
+                                                                          // contenha o método Comparator e seu método
+                                                                          // implementado
+            {
+                add(new Serie("american horror story", "terror", 42)); // adicionando mais séries ao conjunto para
+                                                                       // facilitar a visibilidade da ordenação
+                add(new Serie("cuphead", "animação", 24));
+                add(new Serie("sherlock", "policial", 60));
+            }
+        };
         generoSeries.addAll(seriesHashSet);
         for (Serie serie : generoSeries) {
             System.out.println(serie.getNome() + " - " + serie.getGenero() + " - " + serie.getTempoEp());
@@ -100,7 +110,6 @@ class Serie implements Comparable<Serie> {
         result = prime * result + tempoEp;
         return result;
     }
-    //TODO REMOVER ERRO AQUI
 
     // também não sei
     @Override
