@@ -54,9 +54,7 @@ public class SetExercicioProposto01 {
 
         System.out.println("Todas as cores que começam com a letra 'V': ");
         Iterator<Cores> iterator = coresSet.iterator();
-        while (iterator.hasNext()) {
-            String corV = iterator.next()
-        }
+        
     }
 }
 
