@@ -10,7 +10,7 @@ Após isto, calcule a média semestral das temperaturas e mostre todas as temper
 e em que mês elas ocorreram (mostrar o mês por extenso: 1 – Janeiro, 2 – Fevereiro e etc).
 */
 
-public class ExercicioProposto01 {
+public class ListExercicioProposto01 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         List<Double> temperaturas = new ArrayList<Double>();

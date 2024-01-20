@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
-public class ExercicioProposto1 {
+public class ListExercicio1 {
     public static void main(String[] args) {
         List<Double> temperaturaList = new ArrayList<Double>();
         Scanner scan = new Scanner(System.in);

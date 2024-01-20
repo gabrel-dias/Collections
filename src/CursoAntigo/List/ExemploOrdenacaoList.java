@@ -44,7 +44,6 @@ public class ExemploOrdenacaoList {
         catsList.sort(new ComparatorNomeIdadeCor()); // no método compare(), fazer uma lógica de ordenação que analise
                                                      // todos os critérios para comparação
         System.out.println(catsList);
-        System.out.println("utilizando o cinnamon");
     }
 }
 

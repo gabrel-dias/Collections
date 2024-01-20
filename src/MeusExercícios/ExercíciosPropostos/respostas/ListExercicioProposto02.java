@@ -15,7 +15,7 @@ Utilizando listas, faça um programa que faça 5 perguntas para uma pessoa sobre
 Se a pessoa responder positivamente a 2 questões ela deve ser classificada como "Suspeita", entre 3 e 4 como
 "Cúmplice" e 5 como "Assassina". Caso contrário, ele será classificado como "Inocente".
 */
-public class ExercicioProposto02 {
+public class ListExercicioProposto02 {
     public static void main(String[] args) {
         List<String> respostas = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
