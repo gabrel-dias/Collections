@@ -53,13 +53,30 @@ public class SetExercicioProposto01 {
         }
 
         System.out.println("\nTodas as cores que começam com a letra \"V\":\n");
-        Iterator<Cores> iterator = coresSet.iterator();
-        while (iterator.hasNext()) {
-            Cores cores = iterator.next(); // NÃO pode criar um atributo usando outro tipo além do tipo estabelecido no
-                                            // iterator
-            if (cores.getCor().startsWith("v")|| cores.getCor().startsWith("V"));
-            System.out.println(cores);
+        Set<Cores> coresComV = new TreeSet<>();
+        coresComV.addAll(coresSet);
+
+        Iterator<Cores> iteratorV = coresComV.iterator();
+        while (iteratorV.hasNext()) {
+            Cores coresV = iteratorV.next(); // NÃO pode criar um atributo usando outro tipo além do tipo estabelecido
+                                             // no
+                                             // iterator
+            if (coresV.getCor().startsWith("v"))
+                System.out.println(coresV);
+
         }
+
+        System.out.println("\nTodas as cores que não começam com \"V\":\n");
+        Set<Cores> coresSemV = new TreeSet<>();
+        coresSemV.addAll(coresSet);
+
+        Iterator<Cores> iteratorSemV = coresSemV.iterator();
+        while (iteratorSemV.hasNext()) {
+            Cores corSemV = iteratorSemV.next();
+            if (!corSemV.getCor().startsWith("v"))
+            iteratorSemV.remove();
+        }
+        System.out.println("" + coresSemV);
     }
 }
 
