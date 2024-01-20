@@ -19,7 +19,7 @@ public class SetExercicioProposto01 {
      * 
      * Exiba todas as cores que começam com a letra ”v”
      * 
-     * Remova todas as cores que não começam com a letra “v”
+     * Remova todas as cores que não começam com a letra “a”
      * 
      * Limpe o conjunto
      * 
@@ -38,9 +38,9 @@ public class SetExercicioProposto01 {
 
             }
         };
-        System.out.println("\nExibindo cores uma abaixo da outra e em ordem alfabética:\n");
+        System.out.println("\nExibindo cores uma abaixo da outra e em ordem alfabética: ");
         for (Cores cores : coresSet) {
-            System.out.println("" + cores);
+            System.out.println(cores);
         }
 
         System.out.println("\nQuantidade de cores: " + coresSet.size());
@@ -49,7 +49,7 @@ public class SetExercicioProposto01 {
         Set<Cores> coresInversas = new TreeSet<>(new ComparatorCoresInversas());
         coresInversas.addAll(coresSet);
         for (Cores cores : coresInversas) {
-            System.out.println("" + cores);
+            System.out.println(cores);
         }
 
         System.out.println("\nTodas as cores que começam com a letra \"V\":\n");
@@ -66,17 +66,26 @@ public class SetExercicioProposto01 {
 
         }
 
-        System.out.println("\nTodas as cores que não começam com \"V\":\n");
+        System.out.println("\nRemovendo as cores que NÃO começam com \"A\" e mostrando os elementos restantes:\n");
         Set<Cores> coresSemV = new TreeSet<>();
         coresSemV.addAll(coresSet);
 
         Iterator<Cores> iteratorSemV = coresSemV.iterator();
         while (iteratorSemV.hasNext()) {
             Cores corSemV = iteratorSemV.next();
-            if (!corSemV.getCor().startsWith("v"))
-            iteratorSemV.remove();
+            if (!corSemV.getCor().startsWith("a"))
+                iteratorSemV.remove();
         }
-        System.out.println("" + coresSemV);
+        for (Cores cores : coresSemV) {
+            System.out.println(cores);
+
+        }
+        System.out.println("\nLimpando o conjunto...\n");
+        coresSet.removeAll(coresSet);
+
+        // TODO conferir se o conjunto está vazio
+        if (coresSet.isEmpty() == true)
+        System.out.println("\nO conjunto está vazio? Sim");
     }
 }
 
