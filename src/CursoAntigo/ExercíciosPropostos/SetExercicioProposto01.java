@@ -52,9 +52,14 @@ public class SetExercicioProposto01 {
             System.out.println("" + cores);
         }
 
-        System.out.println("Todas as cores que começam com a letra 'V': ");
+        System.out.println("\nTodas as cores que começam com a letra \"V\":\n");
         Iterator<Cores> iterator = coresSet.iterator();
-        
+        while (iterator.hasNext()) {
+            Cores cores = iterator.next(); // NÃO pode criar um atributo usando outro tipo além do tipo estabelecido no
+                                            // iterator
+            if (cores.getCor().startsWith("v")|| cores.getCor().startsWith("V"));
+            System.out.println(cores);
+        }
     }
 }
 
