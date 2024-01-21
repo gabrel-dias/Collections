@@ -1,4 +1,4 @@
-package MeusExercícios.list.basicas;
+package exercícios.list.basicas;
 
 import java.util.ArrayList;
 import java.util.List;

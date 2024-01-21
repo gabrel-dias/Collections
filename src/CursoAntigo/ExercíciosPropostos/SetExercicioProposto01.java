@@ -1,4 +1,4 @@
-package CursoAntigo.ExercíciosPropostos;
+package cursoAntigo.exercíciosPropostos;
 
 import java.util.Comparator;
 import java.util.Iterator;
@@ -38,54 +38,62 @@ public class SetExercicioProposto01 {
 
             }
         };
+        // descobri que se deixar o System.out.println() abaixo da inserção dos
+        // elementos, o compilador ignora essa linha
         System.out.println("\nExibindo cores uma abaixo da outra e em ordem alfabética: ");
         for (Cores cores : coresSet) {
-            System.out.println(cores);
+            System.out.println(cores); // como os elementos comparados são iguais o retorno do método é zero, e são
+                                       // organizados em ordem alfabética
         }
 
-        System.out.println("\nQuantidade de cores: " + coresSet.size());
+        System.out.println("\nQuantidade de cores do arco-íris: " + coresSet.size());
 
-        System.out.println("\nCores inversas: ");
+        System.out.println("\nConjunto de cores em ordem invertida: "); // utilização do ComparatorCoresInversas com
+                                                                        // retorno -1
         Set<Cores> coresInversas = new TreeSet<>(new ComparatorCoresInversas());
         coresInversas.addAll(coresSet);
         for (Cores cores : coresInversas) {
             System.out.println(cores);
         }
 
-        System.out.println("\nTodas as cores que começam com a letra \"V\":\n");
-        Set<Cores> coresComV = new TreeSet<>();
+        System.out.println("\nTodas as cores que começam com a letra \"V\":");
+        Set<Cores> coresComV = new TreeSet<>(); // criação de um novo Set e adicionando todos os elementos do primeiro
+                                                // Set
         coresComV.addAll(coresSet);
 
         Iterator<Cores> iteratorV = coresComV.iterator();
-        while (iteratorV.hasNext()) {
+        while (iteratorV.hasNext()) { // enquanto houver um próximo elemento no Set, o iterator continuará adicionando
+                                      // elementos na varíavel "coresV"
+
             Cores coresV = iteratorV.next(); // NÃO pode criar um atributo usando outro tipo além do tipo estabelecido
                                              // no
                                              // iterator
-            if (coresV.getCor().startsWith("v"))
+            if (coresV.getCor().startsWith("v")) // se o prefixo de algum elemento for "V", a saída mostrará esse
+                                                 // elemento
                 System.out.println(coresV);
 
         }
 
-        System.out.println("\nRemovendo as cores que NÃO começam com \"A\" e mostrando os elementos restantes:\n");
+        System.out.println("\nRemovendo as cores que NÃO começam com \"A\" e mostrando os elementos restantes:");
         Set<Cores> coresSemV = new TreeSet<>();
         coresSemV.addAll(coresSet);
 
         Iterator<Cores> iteratorSemV = coresSemV.iterator();
         while (iteratorSemV.hasNext()) {
             Cores corSemV = iteratorSemV.next();
-            if (!corSemV.getCor().startsWith("a"))
+            if (!corSemV.getCor().startsWith("a")) // caso um elemento não tenha o prefixo "A", ele será removido do Set
+                                                   // e serão mostrados os elementos restantes
                 iteratorSemV.remove();
         }
         for (Cores cores : coresSemV) {
             System.out.println(cores);
 
         }
-        System.out.println("\nLimpando o conjunto...\n");
+        System.out.println("\nLimpando o conjunto...");
         coresSet.removeAll(coresSet);
 
-        // TODO conferir se o conjunto está vazio
         if (coresSet.isEmpty() == true)
-        System.out.println("\nO conjunto está vazio? Sim");
+            System.out.println("\nO conjunto está vazio? Sim\n");
     }
 }
 

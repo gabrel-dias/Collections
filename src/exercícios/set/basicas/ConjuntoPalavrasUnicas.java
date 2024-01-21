@@ -1,4 +1,4 @@
-package MeusExercícios.set.basicas;
+package exercícios.set.basicas;
 
 import java.util.HashSet;
 import java.util.Set;

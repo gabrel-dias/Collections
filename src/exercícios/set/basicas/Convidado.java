@@ -1,4 +1,4 @@
-package MeusExercícios.set.basicas;
+package exercícios.set.basicas;
 
 public class Convidado implements Comparable<Convidado> {
     // atributos

@@ -1,4 +1,4 @@
-package MeusExercícios.set.pesquisa;
+package exercícios.set.pesquisa;
 
 import java.util.HashSet;
 import java.util.Set;

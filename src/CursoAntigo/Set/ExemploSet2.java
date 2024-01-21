@@ -1,4 +1,4 @@
-package CursoAntigo.Set;
+package cursoAntigo.set;
 
 import java.util.Comparator;
 import java.util.HashSet;

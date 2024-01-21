@@ -1,4 +1,4 @@
-package CursoAntigo.Set;
+package cursoAntigo.set;
 
 // Os Sets (conjuntos) são utilizadas para criar uma lista de elementos que não irão receber alterações de inclusão ou exclusão
 import java.util.Arrays;

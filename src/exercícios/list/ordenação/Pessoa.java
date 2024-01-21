@@ -1,4 +1,4 @@
-package MeusExercícios.list.ordenação;
+package exercícios.list.ordenação;
 
 import java.util.Comparator;
 
