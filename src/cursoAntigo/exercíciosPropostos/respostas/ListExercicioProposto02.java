@@ -41,23 +41,28 @@ public class ListExercicioProposto02 {
 
         int count = 0;
         Iterator<String> contador = respostas.iterator();
-        while(contador.hasNext()){
+        while (contador.hasNext()) {
             String resp = contador.next();
-            if(resp.contains("s")) {
-                count ++;
+            if (resp.contains("s")) {
+                count++;
             }
         }
 
-        switch(count) {
+        switch (count) {
             case 2:
-                System.out.println(">> SUSPEITA <<"); break;
+                System.out.println(">> SUSPEITA <<");
+                break;
             case 3:
             case 4:
-                System.out.println(">> CÚMPLICE <<"); break;
+                System.out.println(">> CÚMPLICE <<");
+                break;
             case 5:
-                System.out.println(">> ASSASSINO <<"); break;
+                System.out.println(">> ASSASSINO <<");
+                break;
             default:
-                System.out.println(">> INOCENTE <<"); break;
+                System.out.println(">> INOCENTE <<");
+                break;
         }
+        scanner.close();
     }
 }

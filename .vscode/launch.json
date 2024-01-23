@@ -1,0 +1,231 @@
+{
+    // Use o IntelliSense para saber mais sobre os atributos possíveis.
+    // Focalizar para exibir as descrições dos atributos existentes.
+    // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "comparableXcomparator.Main",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "ListExercicio1",
+            "request": "launch",
+            "mainClass": "cursoAntigo.exercíciosPropostos.ListExercicio1",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "ListExercício2",
+            "request": "launch",
+            "mainClass": "cursoAntigo.exercíciosPropostos.ListExercício2",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "SetExercicioProposto01",
+            "request": "launch",
+            "mainClass": "cursoAntigo.exercíciosPropostos.SetExercicioProposto01",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "SetExercicioProposto02",
+            "request": "launch",
+            "mainClass": "cursoAntigo.exercíciosPropostos.SetExercicioProposto02",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "ListExercicioProposto01",
+            "request": "launch",
+            "mainClass": "cursoAntigo.exercíciosPropostos.respostas.ListExercicioProposto01",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "ListExercicioProposto02",
+            "request": "launch",
+            "mainClass": "cursoAntigo.exercíciosPropostos.respostas.ListExercicioProposto02",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "ExemploOrdenacaoList",
+            "request": "launch",
+            "mainClass": "cursoAntigo.list.ExemploOrdenacaoList",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "ExemploSet",
+            "request": "launch",
+            "mainClass": "cursoAntigo.set.ExemploSet",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "ExemploSet2",
+            "request": "launch",
+            "mainClass": "cursoAntigo.set.ExemploSet2",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "GenericsExempleList",
+            "request": "launch",
+            "mainClass": "generics.GenericsExempleList",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "GenericsExempleMap",
+            "request": "launch",
+            "mainClass": "generics.GenericsExempleMap",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "GenericsExempleSet",
+            "request": "launch",
+            "mainClass": "generics.GenericsExempleSet",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "CarrinhoDeCompras",
+            "request": "launch",
+            "mainClass": "list.OperacoesBasicas.CarrinhoDeCompras",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "ListaTarefa",
+            "request": "launch",
+            "mainClass": "list.OperacoesBasicas.ListaTarefa",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "OrdenacaoNumeros",
+            "request": "launch",
+            "mainClass": "list.Ordenacao.OrdenacaoNumeros",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "OrdenacaoPessoas",
+            "request": "launch",
+            "mainClass": "list.Ordenacao.OrdenacaoPessoas",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "CatalogoLivros",
+            "request": "launch",
+            "mainClass": "list.Pesquisa.CatalogoLivros",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "SomaNumeros",
+            "request": "launch",
+            "mainClass": "list.Pesquisa.SomaNumeros",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "AgendaContatos",
+            "request": "launch",
+            "mainClass": "map.OperacoesBasicas.AgendaContatos",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "Dicionario",
+            "request": "launch",
+            "mainClass": "map.OperacoesBasicas.Dicionario",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "AgendaEventos",
+            "request": "launch",
+            "mainClass": "map.Ordenacao.AgendaEventos",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "LivrariaOnline",
+            "request": "launch",
+            "mainClass": "map.Ordenacao.LivrariaOnline",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "ContagemPalavras",
+            "request": "launch",
+            "mainClass": "map.Pesquisa.ContagemPalavras",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "EstoqueProdutos",
+            "request": "launch",
+            "mainClass": "map.Pesquisa.EstoqueProdutos",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "ConjuntoConvidados",
+            "request": "launch",
+            "mainClass": "set.OperacoesBasicas.ConjuntoConvidados",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "ConjuntoPalavrasUnicas",
+            "request": "launch",
+            "mainClass": "set.OperacoesBasicas.ConjuntoPalavrasUnicas",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "CadastroProdutos",
+            "request": "launch",
+            "mainClass": "set.Ordenacao.CadastroProdutos",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "GerenciadorAlunos",
+            "request": "launch",
+            "mainClass": "set.Ordenacao.GerenciadorAlunos",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "AgendaContatos(1)",
+            "request": "launch",
+            "mainClass": "set.Pesquisa.AgendaContatos",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "ListaTarefas",
+            "request": "launch",
+            "mainClass": "set.Pesquisa.ListaTarefas",
+            "projectName": "Collections_d8014d3a"
+        }
+    ]
+}

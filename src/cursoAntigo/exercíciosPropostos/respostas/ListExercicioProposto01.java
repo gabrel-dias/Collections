@@ -76,8 +76,8 @@ public class ListExercicioProposto01 {
                 }
             }
             count++;
-        }
-    }
+        } scan.close();
+    } 
 }
 
 
