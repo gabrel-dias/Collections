@@ -11,10 +11,10 @@ public class SetExercicioProposto02 {
      * e ide. Em seguida, crie um conjunto com 3 linguagens e faça um programa que
      * ordene esse conjunto por:
      * 1. Ordem de Inserção (LinkedHashSet)
-     * 2. Ordem Natural (nome) (LinkedHashSet e o Comparable)
-     * 3. IDE
-     * 4. Ano de criação e nome
-     * 5. Nome, ano de criacao e IDE
+     * 2. Ordem Natural (nome) (TreeSet e o Comparable)
+     * 3. IDE (TreeSet e Comparator)
+     * 4. Ano de criação e nome (TreeSet e Comparator)
+     * 5. Nome, ano de criacao e IDE (TreeSet e Comparator)
      * Ao final, exiba as linguagens no console, um abaixo da outra.
      */
 
@@ -22,9 +22,9 @@ public class SetExercicioProposto02 {
         Set<LinguagemFavorita> favoritas = new LinkedHashSet<>() {
             {
                 add(new LinguagemFavorita("c", 1972, "dev-c++"));
+                add(new LinguagemFavorita("phytona", 1991, "cuzão"));
                 add(new LinguagemFavorita("java", 1995, "net beans"));
                 add(new LinguagemFavorita("phyton", 1991, "pycharm"));
-                add(new LinguagemFavorita("phyton", 1991, "cuzão"));
 
             }
         };
@@ -33,13 +33,30 @@ public class SetExercicioProposto02 {
         for (LinguagemFavorita linguagemFavorita : favoritas) {
             System.out.println(linguagemFavorita);
         }
-    
-        Set<LinguagemFavorita> favoritasIde = new TreeSet<>(favoritas);
+
+        System.out.println("\n Ordenado por nome...");
+        Set<LinguagemFavorita> favoritasNome = new TreeSet<>(favoritas);
+        for (LinguagemFavorita linguagemFavorita : favoritasNome) {
+            System.out.println(linguagemFavorita);
+        }
+
         System.out.println("\n Ordenado por IDE...");
+        Set<LinguagemFavorita> favoritasIde = new TreeSet<>(new ComparatorIde());
+        favoritasIde.addAll(favoritas);
         for (LinguagemFavorita linguagemFavorita : favoritasIde) {
             System.out.println(linguagemFavorita);
         }
 
+        System.out.println("\n Ordenado por ano...");
+        Set<LinguagemFavorita> favoritasAno = new TreeSet<>(new ComparatorAno());
+        favoritasAno.addAll(favoritas);
+        for (LinguagemFavorita linguagemFavorita : favoritasAno) {
+            System.out.println(linguagemFavorita);
+        }
+
+        // TODO Nome, ano de criacao e IDE (TreeSet e Comparator)
+
+        // TODO Ano de criação e nome (TreeSet e Comparator)
     }
 }
 
@@ -107,7 +124,7 @@ class LinguagemFavorita implements Comparable<LinguagemFavorita> {
 
     @Override
     public int compareTo(LinguagemFavorita o) {
-        return this.getNome().compareTo(nome);
+        return this.nome.compareTo(o.nome);
     }
 
 }
@@ -116,7 +133,15 @@ class ComparatorIde implements Comparator<LinguagemFavorita> {
 
     @Override
     public int compare(LinguagemFavorita o1, LinguagemFavorita o2) {
-        return o1.getIde().compareTo(o2.getIde());
+        return o1.getIde().compareToIgnoreCase(o2.getIde());
+    }
+}
+
+class ComparatorAno implements Comparator<LinguagemFavorita> {
+
+    @Override
+    public int compare(LinguagemFavorita o1, LinguagemFavorita o2) {
+        return Integer.compare(o1.getAnoCriacao(), o2.getAnoCriacao());
     }
 
 }
