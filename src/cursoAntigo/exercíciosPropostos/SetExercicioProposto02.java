@@ -22,7 +22,7 @@ public class SetExercicioProposto02 {
         Set<LinguagemFavorita> favoritas = new LinkedHashSet<>() {
             {
                 add(new LinguagemFavorita("c", 1972, "dev-c++"));
-                add(new LinguagemFavorita("phytona", 1991, "cuzão"));
+                add(new LinguagemFavorita("xibata", 1991, "cuzão"));
                 add(new LinguagemFavorita("java", 1995, "net beans"));
                 add(new LinguagemFavorita("phyton", 1991, "pycharm"));
 
@@ -60,7 +60,13 @@ public class SetExercicioProposto02 {
         for (LinguagemFavorita linguagemFavorita : favoritasNAI) {
             System.out.println(linguagemFavorita);
         }
-        // TODO Ano de criação e nome (TreeSet e Comparator)
+        
+        System.out.println("\nOrdenado por Ano/Nome");
+        Set<LinguagemFavorita> favoritasAN = new TreeSet<>(new ComparatorAN());
+        favoritasAN.addAll(favoritas);
+        for (LinguagemFavorita linguagemFavorita : favoritasAN) {
+            System.out.println(linguagemFavorita);
+        }
     }
 }
 
