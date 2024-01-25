@@ -54,8 +54,12 @@ public class SetExercicioProposto02 {
             System.out.println(linguagemFavorita);
         }
 
-        // TODO Nome, ano de criacao e IDE (TreeSet e Comparator)
-
+        System.out.println("\nOrdenado por Nome/Ano de Criação/IDE...");
+        Set<LinguagemFavorita> favoritasNAI = new TreeSet<>(new ComparatorNAI());
+        favoritasNAI.addAll(favoritas);
+        for (LinguagemFavorita linguagemFavorita : favoritasNAI) {
+            System.out.println(linguagemFavorita);
+        }
         // TODO Ano de criação e nome (TreeSet e Comparator)
     }
 }
@@ -143,5 +147,16 @@ class ComparatorAno implements Comparator<LinguagemFavorita> {
     public int compare(LinguagemFavorita o1, LinguagemFavorita o2) {
         return Integer.compare(o1.getAnoCriacao(), o2.getAnoCriacao());
     }
+}
 
+class ComparatorNAI implements Comparator<LinguagemFavorita> {
+
+    @Override
+    public int compare(LinguagemFavorita o1, LinguagemFavorita o2) {
+        int nome = o1.getNome().compareTo(o2.getNome());
+        int ano = Integer.compare(o1.getAnoCriacao(), o2.getAnoCriacao());
+        if (nome != 0) return nome;
+        if (ano != 0) return ano;
+        return o1.getIde().compareTo(o2.getIde());
+    }
 }
