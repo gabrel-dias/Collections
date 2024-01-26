@@ -1,9 +1,9 @@
-package cursoAntigo.exercíciosPropostos;
+package cursoantigo.exercíciospropostos;
 /*Faça um programa que receba a temperatura média dos 6 primeiros meses do ano e armazene-as em uma lista.
 Após isto, calcule a média semestral das temperaturas e mostre todas as temperaturas acima desta média,
 e em que mês elas ocorreram (mostrar o mês por extenso: 1 – Janeiro, 2 – Fevereiro e etc).
 */
-
+// TODO refazer esse exercício depois para praticar a lógica dele
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class ListExercicio1 {
     public static void main(String[] args) {
-        List<Double> temperaturaList = new ArrayList<Double>();
+        List<Double> temperaturaList = new ArrayList<>();
         Scanner scan = new Scanner(System.in);
         // Adicionando as temperaturas na lista
         for (int cont = 0; cont < 6; cont++) {

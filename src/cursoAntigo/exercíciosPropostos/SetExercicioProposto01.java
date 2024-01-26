@@ -1,4 +1,4 @@
-package cursoAntigo.exercíciosPropostos;
+package cursoantigo.exercíciospropostos;
 
 import java.util.Comparator;
 import java.util.Iterator;

@@ -1,4 +1,4 @@
-package cursoAntigo.list;
+package cursoantigo.list;
 
 import java.util.ArrayList;
 import java.util.Collections;

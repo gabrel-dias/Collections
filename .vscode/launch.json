@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ListExercicioProposto01",
+            "request": "launch",
+            "mainClass": "cursoantigo.exercíciospropostos.respostas.ListExercicioProposto01",
+            "projectName": "Collections_f330879a"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"

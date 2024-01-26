@@ -1,4 +1,4 @@
-package cursoAntigo.exercíciosPropostos;
+package cursoantigo.exercíciospropostos;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -17,10 +17,10 @@ Se a pessoa responder positivamente a 2 questões ela deve ser classificada como
 */
 public class ListExercício2 {
     public static void main(String[] args) {
-        List<String> respostasList = new ArrayList<String>();
+        List<String> respostasList = new ArrayList<>();
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Perguntas sobre o crime: ");
+        System.out.println("Perguntas sobre o crime (responder com 'S' ou 'N'): ");
         System.out.println("\nTelefonou para a vítima?");
         String respostasScan = scan.next();
         respostasList.add(respostasScan.toLowerCase());

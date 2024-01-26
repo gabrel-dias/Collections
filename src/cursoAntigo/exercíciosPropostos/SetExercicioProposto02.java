@@ -1,4 +1,4 @@
-package cursoAntigo.exercíciosPropostos;
+package cursoantigo.exercíciospropostos;
 
 import java.util.Comparator;
 import java.util.LinkedHashSet;
@@ -22,7 +22,6 @@ public class SetExercicioProposto02 {
         Set<LinguagemFavorita> favoritas = new LinkedHashSet<>() {
             {
                 add(new LinguagemFavorita("c", 1972, "dev-c++"));
-                add(new LinguagemFavorita("xibata", 1991, "cuzão"));
                 add(new LinguagemFavorita("java", 1995, "net beans"));
                 add(new LinguagemFavorita("phyton", 1991, "pycharm"));
 
@@ -60,7 +59,7 @@ public class SetExercicioProposto02 {
         for (LinguagemFavorita linguagemFavorita : favoritasNAI) {
             System.out.println(linguagemFavorita);
         }
-        
+
         System.out.println("\nOrdenado por Ano/Nome");
         Set<LinguagemFavorita> favoritasAN = new TreeSet<>(new ComparatorAN());
         favoritasAN.addAll(favoritas);
@@ -164,5 +163,14 @@ class ComparatorNAI implements Comparator<LinguagemFavorita> {
         if (nome != 0) return nome;
         if (ano != 0) return ano;
         return o1.getIde().compareTo(o2.getIde());
+    }
+}
+
+class ComparatorAN implements Comparator<LinguagemFavorita>{
+    @Override
+    public int compare(LinguagemFavorita o1, LinguagemFavorita o2) {
+        int ano = Integer.compare(o1.getAnoCriacao(), o2.getAnoCriacao());
+        if (ano != 0) return ano;
+        return o1.getNome().compareToIgnoreCase(o2.getNome());
     }
 }

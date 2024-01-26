@@ -1,4 +1,4 @@
-package cursoAntigo.exercíciosPropostos.respostas;
+package cursoantigo.exercíciospropostos.respostas;
 
 import java.util.*;
 
