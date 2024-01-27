@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Brune",
+            "request": "launch",
+            "mainClass": "Brune",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "brune",
+            "request": "launch",
+            "mainClass": "brune",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
+            "name": "ExemploMap",
+            "request": "launch",
+            "mainClass": "cursoantigo.map.ExemploMap",
+            "projectName": "Collections_d8014d3a"
+        },
+        {
+            "type": "java",
             "name": "ListExercicioProposto01",
             "request": "launch",
             "mainClass": "cursoantigo.exercíciospropostos.respostas.ListExercicioProposto01",

@@ -30,7 +30,7 @@ public class ExemploMap {
         motosEconomicas.put("honda", 24.1);
         System.out.println(motosEconomicas);
         
-        System.out.println("\nConferindo se a chave \"honda\" está no Map das motos", motosEconomicas.containsKey("honda"));
+        System.out.println("\nA chave \"honda\" está no Map das motos?: " + motosEconomicas.containsKey("honda"));
     }
 }
 
