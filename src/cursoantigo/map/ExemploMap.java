@@ -1,7 +1,11 @@
 package cursoantigo.map;
 
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 /*Honda CB500F (2023): Cerca de 25 a 30 km/l.
 Yamaha MT-07 (2023): Aproximadamente 20 a 25 km/l.
@@ -12,7 +16,7 @@ Ducati Panigale V4 (2023): Variação de 12 a 15 km/l*/
 public class ExemploMap {
     public static void main(String[] args) {
         // em maps NÃO podem haver chaves iguais, apenas os valores
-        System.out.println("\nMap dos modelos de motos e seus consumos médios.\n");
+        System.out.println("\nCriando Map dos modelos de motos e seus consumos médios.\n");
         Map<String, Double> motosEconomicas = new HashMap<>() { // criação do Map com o TIPO DA CHAVE e o TIPO DO VALOR
                                                                 // dentro do diamond
             {
@@ -25,16 +29,52 @@ public class ExemploMap {
             }
         };
         System.out.println(motosEconomicas);
-        
-        System.out.println("\nSubstituindo o consumo(value) da honda(key) para 24.1\n");
+
+        System.out.println("\nSubstituindo o consumo(value) da honda(key) para 24.1...");
         motosEconomicas.put("honda", 24.1);
         System.out.println(motosEconomicas);
-        
+
         System.out.println("\nA chave \"honda\" está no Map das motos?: " + motosEconomicas.containsKey("honda"));
+
+        System.out.println("\nQual o consumo da chave \"bmw\"? " + motosEconomicas.get("bmw")); // o método get() espera
+                                                                                                // receber um objeto
+                                                                                                // como parâmetro mas
+                                                                                                // também aceita a chave
+
+        System.out.println("\nExibindo apenas os modelos(chaves)...");
+        Set<String> keySet = motosEconomicas.keySet(); // o método keySet() retorna um SET contendo todas as chaves do
+                                                       // Map
+        System.out.println(keySet);
+        /*
+         * Iterator<String> iterator = keySet.iterator(); //TAVA TESTANDO UMA COISA AQUI
+         * while (iterator.hasNext()) {
+         * String next = iterator.next();
+         * if (next.equalsIgnoreCase("honda")) {
+         * System.out.println(next);
+         * }
+         * }
+         */
+        System.out.println("\nExibindo os consumos(valores)...\n" + motosEconomicas.values());
+
+        System.out.println("\nDescobrindo qual o valor mais econômico (km/l)");
+        Double valorEficiente = Collections.max(motosEconomicas.values()); // no método Collections.max() é passado uma
+                                                                          // Collection no parâmetro especificando o que
+                                                                          // se espera retornar. No caso são os valores
+                                                                          // do Map, com seu valor mais alto
+
+        System.out.println("Exibindo o modelo mais econômico com o seu respectivo consumo...");
+        String modeloEficiente = "";
+        Set<Entry<String, Double>> entries = motosEconomicas.entrySet(); //o método entrySet() meio que faz uma conversão dos valores de um Map para Set. Todos os elementos desse Set retornado serão do tipo Entry
+        
+        for (Entry<String,Double> entry : entries) {
+            if (entry.getValue().equals(valorEficiente)){ //verifica todos os elementos do Set de Entry para saber se algum deles é igual ao valorEficiente, descoberto anteriormente por meio do Collections.max(motosEconomicas.values()) 
+            modeloEficiente=entry.getKey();}
+        }
+        System.out.println("O modelo "+ modeloEficiente + " consome " + valorEficiente);
     }
 }
 
-class Motos { // não está sendo utilizada no momento
+class Motos { // não está sendo utilizada no momento... e acho que nem vai ser
     private String modelo;
     private double consumo;
 
