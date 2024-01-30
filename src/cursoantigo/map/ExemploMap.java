@@ -58,21 +58,32 @@ public class ExemploMap {
 
         System.out.println("\nDescobrindo qual o valor mais econômico (km/l)");
         Double valorEficiente = Collections.max(motosEconomicas.values()); // no método Collections.max() é passado uma
-                                                                          // Collection no parâmetro especificando o que
-                                                                          // se espera retornar. No caso são os valores
-                                                                          // do Map, com seu valor mais alto
+                                                                           // Collection no parâmetro especificando o
+                                                                           // que
+                                                                           // se espera retornar. No caso são os valores
+                                                                           // do Map, com seu valor mais alto
 
         System.out.println("Exibindo o modelo mais econômico com o seu respectivo consumo...");
         String modeloEficiente = "";
-        Set<Entry<String, Double>> entries = motosEconomicas.entrySet(); //o método entrySet() meio que faz uma conversão dos valores de um Map para Set. Todos os elementos desse Set retornado serão do tipo Entry
-        
-        for (Entry<String,Double> entry : entries) {
-            if (entry.getValue().equals(valorEficiente)){ //verifica todos os elementos do Set de Entry para saber se algum deles é igual ao valorEficiente, descoberto anteriormente por meio do Collections.max(motosEconomicas.values()) 
-            modeloEficiente=entry.getKey();}
+        Set<Entry<String, Double>> entries = motosEconomicas.entrySet(); // o método entrySet() meio que faz uma
+                                                                         // conversão dos valores de um Map para Set.
+                                                                         // Todos os elementos desse Set retornado serão
+                                                                         // do tipo Entry
+
+        for (Entry<String, Double> entry : entries) {
+            if (entry.getValue().equals(valorEficiente)) { // verifica todos os elementos do Set de Entry para saber se
+                                                           // algum deles é igual ao valorEficiente, descoberto
+                                                           // anteriormente por meio do
+                                                           // Collections.max(motosEconomicas.values())
+                modeloEficiente = entry.getKey();
+            }
         }
-        System.out.println("O modelo "+ modeloEficiente + " consome " + valorEficiente);
+        System.out.println("O modelo " + modeloEficiente + " consome " + valorEficiente);
     }
 }
+// adoraria fazer um commit de responsa hoje, agregando conhecimento novo, mas
+// estou morrendo de tentar arrumar um problema com o notebook, então talvez o
+// commit de hoje seja apenas com essa anotação mesmo pra não perder o streak
 
 class Motos { // não está sendo utilizada no momento... e acho que nem vai ser
     private String modelo;
