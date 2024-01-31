@@ -78,12 +78,19 @@ public class ExemploMap {
                 modeloEficiente = entry.getKey();
             }
         }
-        System.out.println("O modelo " + modeloEficiente + " consome " + valorEficiente);
+        System.out.println("O modelo " + modeloEficiente + " consome " + valorEficiente + "e é o mais eficiente de todos");
+
+        System.out.println("Exibindo o modelo mais econômico e o seu consumo...");
+        String modeloIneficiente = "";
+        double valorIneficiente = Collections.min(motosEconomicas.values());
+        for (Entry<String,Double> entry : entries) {
+            if (entry.getValue().equals(valorIneficiente)) {
+                modeloIneficiente = entry.getKey();
+            }
+        }
+        System.out.println("O modelo " + modeloIneficiente + " consome " + valorIneficiente + " e é o menos eficiente de todos");
     }
 }
-// adoraria fazer um commit de responsa hoje, agregando conhecimento novo, mas
-// estou morrendo de tentar arrumar um problema com o notebook, então talvez o
-// commit de hoje seja apenas com essa anotação mesmo pra não perder o streak
 
 class Motos { // não está sendo utilizada no momento... e acho que nem vai ser
     private String modelo;
