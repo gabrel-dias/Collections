@@ -80,7 +80,7 @@ public class ExemploMap {
         }
         System.out.println("O modelo " + modeloEficiente + " consome " + valorEficiente + "e é o mais eficiente de todos");
 
-        System.out.println("Exibindo o modelo mais econômico e o seu consumo...");
+        System.out.println("Exibindo o modelo menos econômico e o seu consumo...");
         String modeloIneficiente = "";
         double valorIneficiente = Collections.min(motosEconomicas.values());
         for (Entry<String,Double> entry : entries) {
