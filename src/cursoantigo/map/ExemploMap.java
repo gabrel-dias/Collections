@@ -1,5 +1,6 @@
 package cursoantigo.map;
-
+//rebase
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -21,7 +22,7 @@ public class ExemploMap {
                                                                 // dentro do diamond
             {
                 put("honda", 25.6); // não existe método add() em Maps, o put() faz esse papel
-                put("yamnaha", 23.7);
+                put("yamaha", 23.7);
                 put("kawasaki", 21.8);
                 put("harley", 17.9);
                 put("bmw", 17.2);
@@ -54,7 +55,9 @@ public class ExemploMap {
          * }
          * }
          */
-        System.out.println("\nExibindo os consumos(valores)...\n" + motosEconomicas.values());
+        System.out.println("\nExibindo os consumos(valores)...\n" + motosEconomicas.values()); // retornará apenas os
+                                                                                               // valores do Map, sem
+                                                                                               // suas chaves
 
         System.out.println("\nDescobrindo qual o valor mais econômico (km/l)");
         Double valorEficiente = Collections.max(motosEconomicas.values()); // no método Collections.max() é passado uma
@@ -78,70 +81,49 @@ public class ExemploMap {
                 modeloEficiente = entry.getKey();
             }
         }
-        System.out.println("O modelo " + modeloEficiente + " consome " + valorEficiente + "e é o mais eficiente de todos");
+        System.out.println(
+                "O modelo " + modeloEficiente + " consome " + valorEficiente + "e é o mais eficiente de todos");
 
-        System.out.println("Exibindo o modelo mais econômico e o seu consumo...");
+        System.out.println("Exibindo o modelo menos econômico e o seu consumo...");
         String modeloIneficiente = "";
-        double valorIneficiente = Collections.min(motosEconomicas.values());
-        for (Entry<String,Double> entry : entries) {
+        double valorIneficiente = Collections.min(motosEconomicas.values()); // o ineficiente será o valor MÍNIMO
+                                                                             // contido no Map
+        for (Entry<String, Double> entry : entries) {
             if (entry.getValue().equals(valorIneficiente)) {
                 modeloIneficiente = entry.getKey();
             }
         }
-        System.out.println("O modelo " + modeloIneficiente + " consome " + valorIneficiente + " e é o menos eficiente de todos");
+        System.out.println(
+                "O modelo " + modeloIneficiente + " consome " + valorIneficiente + " e é o menos eficiente de todos");
+
+        System.out.println("\nSomando todos os consumos...");
+        Collection<Double> values = motosEconomicas.values();
+        double somaValues = 0;
+        for (Double soma : values) {
+            somaValues += soma;
+        }
+        System.out.println(String.format("%.2f", somaValues) + "km/l"); // utilização do String.format() é necessária,
+                                                                        // para concatenar com a ultima string
+
+        System.out.println("\nFazendo com iterator...");
+        Iterator<Double> iterator = motosEconomicas.values().iterator();
+        double soma = 0d;
+        while (iterator.hasNext()) {
+            soma += iterator.next();
+            System.out.printf("%.2f ", soma);
+        }
+
+        System.out.println("\nMédia dos consumos: " + soma / motosEconomicas.size() + "km/l");
+
+        Set<Entry<String, Double>> setRemovedora = motosEconomicas.entrySet(); // é muito melhor fazer essa remoção com
+                                                                               // um iterator para evitar recursão
+        for (Entry<String, Double> entry : setRemovedora) {
+            if (entry.getValue().equals(17.2d)) {
+                String chaveRemovida = entry.getKey();
+                motosEconomicas.remove(chaveRemovida);
+            }
+        }
+        System.out.println("\nDicionario após o modelo com consumo igual a \"17.2km/l\" ter sido removido");
+        System.out.println(motosEconomicas);
     }
-}
-
-class Motos { // não está sendo utilizada no momento... e acho que nem vai ser
-    private String modelo;
-    private double consumo;
-
-    public Motos(String modelo, double consumo) {
-        this.modelo = modelo;
-        this.consumo = consumo;
-    }
-
-    public String getModelo() {
-        return modelo;
-    }
-
-    public double getConsumo() {
-        return consumo;
-    }
-
-    @Override
-    public String toString() {
-        return "Modelo = " + modelo + ", Consumo = " + consumo;
-    }
-
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((modelo == null) ? 0 : modelo.hashCode());
-        long temp;
-        temp = Double.doubleToLongBits(consumo);
-        result = prime * result + (int) (temp ^ (temp >>> 32));
-        return result;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Motos other = (Motos) obj;
-        if (modelo == null) {
-            if (other.modelo != null)
-                return false;
-        } else if (!modelo.equals(other.modelo))
-            return false;
-        if (Double.doubleToLongBits(consumo) != Double.doubleToLongBits(other.consumo))
-            return false;
-        return true;
-    }
-
 }
