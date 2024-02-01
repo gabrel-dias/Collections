@@ -1,5 +1,5 @@
 package cursoantigo.map;
-// teste de commit
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -21,7 +21,7 @@ public class ExemploMap {
                                                                 // dentro do diamond
             {
                 put("honda", 25.6); // não existe método add() em Maps, o put() faz esse papel
-                put("yamnaha", 23.7);
+                put("yamaha", 23.7);
                 put("kawasaki", 21.8);
                 put("harley", 17.9);
                 put("bmw", 17.2);
@@ -54,7 +54,7 @@ public class ExemploMap {
          * }
          * }
          */
-        System.out.println("\nExibindo os consumos(valores)...\n" + motosEconomicas.values());
+        System.out.println("\nExibindo os consumos(valores)...\n" + motosEconomicas.values()); // retornará apenas os valores do Map, sem suas chaves
 
         System.out.println("\nDescobrindo qual o valor mais econômico (km/l)");
         Double valorEficiente = Collections.max(motosEconomicas.values()); // no método Collections.max() é passado uma
@@ -78,17 +78,19 @@ public class ExemploMap {
                 modeloEficiente = entry.getKey();
             }
         }
-        System.out.println("O modelo " + modeloEficiente + " consome " + valorEficiente + "e é o mais eficiente de todos");
+        System.out.println(
+                "O modelo " + modeloEficiente + " consome " + valorEficiente + "e é o mais eficiente de todos");
 
         System.out.println("Exibindo o modelo menos econômico e o seu consumo...");
         String modeloIneficiente = "";
-        double valorIneficiente = Collections.min(motosEconomicas.values());
-        for (Entry<String,Double> entry : entries) {
+        double valorIneficiente = Collections.min(motosEconomicas.values()); // o ineficiente será o valor MÍNIMO contido no Map
+        for (Entry<String, Double> entry : entries) {
             if (entry.getValue().equals(valorIneficiente)) {
                 modeloIneficiente = entry.getKey();
             }
         }
-        System.out.println("O modelo " + modeloIneficiente + " consome " + valorIneficiente + " e é o menos eficiente de todos");
+        System.out.println(
+                "O modelo " + modeloIneficiente + " consome " + valorIneficiente + " e é o menos eficiente de todos");
     }
 }
 
