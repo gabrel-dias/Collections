@@ -1,5 +1,5 @@
 package cursoantigo.map;
-
+//rebase
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -102,7 +102,8 @@ public class ExemploMap {
         for (Double soma : values) {
             somaValues += soma;
         }
-        System.out.println(somaValues + "km/l");
+        System.out.println(String.format("%.2f", somaValues) + "km/l"); // utilização do String.format() é necessária,
+                                                                        // para concatenar com a ultima string
 
         System.out.println("\nFazendo com iterator...");
         Iterator<Double> iterator = motosEconomicas.values().iterator();
@@ -111,59 +112,18 @@ public class ExemploMap {
             soma += iterator.next();
             System.out.printf("%.2f ", soma);
         }
+
+        System.out.println("\nMédia dos consumos: " + soma / motosEconomicas.size() + "km/l");
+
+        Set<Entry<String, Double>> setRemovedora = motosEconomicas.entrySet(); // é muito melhor fazer essa remoção com
+                                                                               // um iterator para evitar recursão
+        for (Entry<String, Double> entry : setRemovedora) {
+            if (entry.getValue().equals(17.2d)) {
+                String chaveRemovida = entry.getKey();
+                motosEconomicas.remove(chaveRemovida);
+            }
+        }
+        System.out.println("\nDicionario após o modelo com consumo igual a \"17.2km/l\" ter sido removido");
+        System.out.println(motosEconomicas);
     }
-}
-
-class Motos { // não está sendo utilizada no momento... e acho que nem vai ser
-    private String modelo;
-    private double consumo;
-
-    public Motos(String modelo, double consumo) {
-        this.modelo = modelo;
-        this.consumo = consumo;
-    }
-
-    public String getModelo() {
-        return modelo;
-    }
-
-    public double getConsumo() {
-        return consumo;
-    }
-
-    @Override
-    public String toString() {
-        return "Modelo = " + modelo + ", Consumo = " + consumo;
-    }
-
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((modelo == null) ? 0 : modelo.hashCode());
-        long temp;
-        temp = Double.doubleToLongBits(consumo);
-        result = prime * result + (int) (temp ^ (temp >>> 32));
-        return result;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Motos other = (Motos) obj;
-        if (modelo == null) {
-            if (other.modelo != null)
-                return false;
-        } else if (!modelo.equals(other.modelo))
-            return false;
-        if (Double.doubleToLongBits(consumo) != Double.doubleToLongBits(other.consumo))
-            return false;
-        return true;
-    }
-
 }
