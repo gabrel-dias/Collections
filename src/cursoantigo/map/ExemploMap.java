@@ -1,5 +1,6 @@
 package cursoantigo.map;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -54,7 +55,9 @@ public class ExemploMap {
          * }
          * }
          */
-        System.out.println("\nExibindo os consumos(valores)...\n" + motosEconomicas.values()); // retornará apenas os valores do Map, sem suas chaves
+        System.out.println("\nExibindo os consumos(valores)...\n" + motosEconomicas.values()); // retornará apenas os
+                                                                                               // valores do Map, sem
+                                                                                               // suas chaves
 
         System.out.println("\nDescobrindo qual o valor mais econômico (km/l)");
         Double valorEficiente = Collections.max(motosEconomicas.values()); // no método Collections.max() é passado uma
@@ -83,7 +86,8 @@ public class ExemploMap {
 
         System.out.println("Exibindo o modelo menos econômico e o seu consumo...");
         String modeloIneficiente = "";
-        double valorIneficiente = Collections.min(motosEconomicas.values()); // o ineficiente será o valor MÍNIMO contido no Map
+        double valorIneficiente = Collections.min(motosEconomicas.values()); // o ineficiente será o valor MÍNIMO
+                                                                             // contido no Map
         for (Entry<String, Double> entry : entries) {
             if (entry.getValue().equals(valorIneficiente)) {
                 modeloIneficiente = entry.getKey();
@@ -91,6 +95,14 @@ public class ExemploMap {
         }
         System.out.println(
                 "O modelo " + modeloIneficiente + " consome " + valorIneficiente + " e é o menos eficiente de todos");
+
+        System.out.println("\nSomando todos os consumos...");
+        Collection<Double> values = motosEconomicas.values();
+        double somaValues = 0;
+        for (Double soma : values) {
+            somaValues += soma;
+        }
+        System.out.println(somaValues);
     }
 }
 
