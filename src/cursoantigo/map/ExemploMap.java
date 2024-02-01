@@ -102,7 +102,15 @@ public class ExemploMap {
         for (Double soma : values) {
             somaValues += soma;
         }
-        System.out.println(somaValues);
+        System.out.println(somaValues + "km/l");
+
+        System.out.println("\nFazendo com iterator...");
+        Iterator<Double> iterator = motosEconomicas.values().iterator();
+        double soma = 0d;
+        while (iterator.hasNext()) {
+            soma += iterator.next();
+            System.out.printf("%.2f ", soma);
+        }
     }
 }
 
