@@ -1,12 +1,15 @@
 package cursoantigo.map;
+
 //rebase
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.TreeMap;
 
 /*Honda CB500F (2023): Cerca de 25 a 30 km/l.
 Yamaha MT-07 (2023): Aproximadamente 20 a 25 km/l.
@@ -123,7 +126,29 @@ public class ExemploMap {
                 motosEconomicas.remove(chaveRemovida);
             }
         }
-        System.out.println("\nDicionario após o modelo com consumo igual a \"17.2km/l\" ter sido removido");
+        System.out.println("\nDicionario após o modelo com consumo igual a \"17.2km/l\" ter sido removido:");
         System.out.println(motosEconomicas);
+        
+        System.out.println("\nDicionario com elementos na sua ordem de inserção:");
+        LinkedHashMap<String, Double> motosLinkedHashMap = new LinkedHashMap<>() {
+            {
+                put("kawasaki", 21.8);
+                put("yamaha", 23.7);
+                put("honda", 25.6);
+                put("harley", 17.9);
+                put("bmw", 17.2);
+                put("ducati", 14.1);
+            }
+        };
+        System.out.println(motosLinkedHashMap);
+        
+        System.out.println("\nDicionario com elementos na sua ordem alfabética:");
+        TreeMap<String, Double> motosTreeMap = new TreeMap<>(motosLinkedHashMap);
+        System.out.println(motosTreeMap);
+        
+        System.out.println("\nApagando o dicionário...");
+        motosTreeMap.clear();
+        
+        System.out.println("\nO dicionário está vazio? " + motosTreeMap.isEmpty());
     }
 }
