@@ -5,17 +5,24 @@ import java.util.Map;
 
 public class ExemploMap2 {
     public static void main(String[] args) {
-        Map<String, Livros> livrosAleatorios = new HashMap<>() {
+        Map<String, Livro> livrosAleatorios = new HashMap<>() {
             {
-                put("Stephen King", new Livros("IT: A coisa", 1104));
-                put("Geroge R.R. Martin", new Livros("A Tormenta de Espadas", 832));
-                put("J.K. Rowling", new Livros("Harry Potter e a Pedra Filosofal", 208));
+                put("Stephen King", new Livro("IT: A coisa", 1104));
+                put("George R.R. Martin", new Livro("A Tormenta de Espadas", 832));
+                put("J.K. Rowling", new Livro("Harry Potter e a Pedra Filosofal", 208));
             }
         };
+
+        System.out.println("--\tOrdem aleatória\t--");
+        for (Map.Entry<String, Livro> livro : livrosAleatorios.entrySet()) {
+            System.out.println(livro.getKey() + "\n" + livro.getValue().getTitulo()); // o getter do
+                                                                                      // título vem do atributo da
+                                                                                      // classe 'Livro'
+        }
     }
 }
 
-class Livros {
+class Livro {
     private String titulo;
     private int quantidadePaginas;
 
@@ -27,7 +34,7 @@ class Livros {
         return quantidadePaginas;
     }
 
-    public Livros(String titulo, int quantidadePaginas) {
+    public Livro(String titulo, int quantidadePaginas) {
         this.titulo = titulo;
         this.quantidadePaginas = quantidadePaginas;
     }
@@ -49,7 +56,7 @@ class Livros {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Livros other = (Livros) obj;
+        Livro other = (Livro) obj;
         if (titulo == null) {
             if (other.titulo != null)
                 return false;
@@ -62,7 +69,7 @@ class Livros {
 
     @Override
     public String toString() {
-        return "Título=" + titulo + ", QuantidadePaginas=" + quantidadePaginas;
+        return "Título - " + titulo + ", Páginas - " + quantidadePaginas;
     }
 
 }
