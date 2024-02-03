@@ -1,24 +1,45 @@
 package cursoantigo.map;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class ExemploMap2 {
     public static void main(String[] args) {
         Map<String, Livro> livrosAleatorios = new HashMap<>() {
             {
-                put("Stephen King", new Livro("IT: A coisa", 1104));
                 put("George R.R. Martin", new Livro("A Tormenta de Espadas", 832));
+                put("Stephen King", new Livro("IT: A coisa", 1104));
                 put("J.K. Rowling", new Livro("Harry Potter e a Pedra Filosofal", 208));
             }
         };
 
-        System.out.println("--\tOrdem aleatória\t--");
+        System.out.println("--\t Ordem aleatória \t--");
         for (Map.Entry<String, Livro> livro : livrosAleatorios.entrySet()) {
             System.out.println(livro.getKey() + "\n" + livro.getValue().getTitulo()); // o getter do
-                                                                                      // título vem do atributo da
-                                                                                      // classe 'Livro'
+            // título vem do atributo da
+            // classe 'Livro'
         }
+
+        System.out.println("--\t Ordem de inserção \t --");
+        Map<String, Livro> livrosInseridos = new LinkedHashMap<>() {
+            {
+                put("Stephen King", new Livro("IT: A coisa", 1104));
+                put("J.K. Rowling", new Livro("Harry Potter e a Pedra Filosofal", 208));
+                put("George R.R. Martin", new Livro("A Tormenta de Espadas", 832));
+            }
+        };
+        for (Map.Entry<String, Livro> livro : livrosInseridos.entrySet()) {
+            System.out.println(livro.getKey() + "\n" + livro.getValue().getTitulo());
+        }
+        
+        System.out.println("--\t Ordem de autores \t--");
+        Map<String, Livro> livrosAutores = new TreeMap<>(livrosInseridos);
+        for (Map.Entry<String, Livro> livro : livrosAutores.entrySet()) {
+            System.out.println(livro.getKey() + "\n" + livro.getValue().getTitulo());
+        }
+        
     }
 }
 
