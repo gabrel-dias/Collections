@@ -128,7 +128,7 @@ public class ExemploMap {
         }
         System.out.println("\nDicionario após o modelo com consumo igual a \"17.2km/l\" ter sido removido:");
         System.out.println(motosEconomicas);
-        
+
         System.out.println("\nDicionario com elementos na sua ordem de inserção:");
         LinkedHashMap<String, Double> motosLinkedHashMap = new LinkedHashMap<>() {
             {
@@ -141,14 +141,15 @@ public class ExemploMap {
             }
         };
         System.out.println(motosLinkedHashMap);
-        
+
         System.out.println("\nDicionario com elementos na sua ordem alfabética:");
         TreeMap<String, Double> motosTreeMap = new TreeMap<>(motosLinkedHashMap);
         System.out.println(motosTreeMap);
-        
+
         System.out.println("\nApagando o dicionário...");
         motosTreeMap.clear();
-        
-        System.out.println("\nO dicionário está vazio? " + motosTreeMap.isEmpty());
+        if (motosTreeMap.isEmpty()) {
+            System.out.println("\nO dicionário está vazio!");
+        }
     }
 }
