@@ -151,5 +151,6 @@ public class ExemploMap {
         if (motosTreeMap.isEmpty()) {
             System.out.println("\nO dicionário está vazio!");
         }
+        System.out.println("O primeiro dicionário está vazio? " + motosEconomicas.isEmpty());
     }
 }
