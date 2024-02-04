@@ -64,6 +64,7 @@ public class ExemploMap2 {
             System.out.println(
                     livro.getValue().getTitulo() + "\n" + livro.getValue().getQuantidadePaginas() + " páginas");
         }
+       
         // TODO estudar mais esses últimos exemplos com o Comparator e a Entry no geral
     }
 
