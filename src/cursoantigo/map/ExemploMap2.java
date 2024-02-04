@@ -49,17 +49,24 @@ public class ExemploMap2 {
         System.out.println("--\t Ordem alfabética dos livros \t--");
         Set<Map.Entry<String, Livro>> livroSet = new TreeSet<>(new ComparatorLivros()); // para ordenar os valores é
         // preciso utilizar o Comparator
-        
+
         livroSet.addAll(livrosAleatorios.entrySet());// é preciso utilizar o entrySet() com o addAll para que todos os
         // elementos do
         // Map sejam repassados para o Set
         for (Map.Entry<String, Livro> livro : livroSet) {
             System.out.println(livro.getKey() + "\n" + livro.getValue().getTitulo());
         }
-        
-        // TODO System.out.println("--\t Ordem número de página \t--");
+
+        System.out.println("--\t Ordem número de página \t--");
+        Set<Map.Entry<String, Livro>> paginaSet = new TreeSet<>(new ComparatorPaginas());
+        paginaSet.addAll(livrosAleatorios.entrySet());
+        for (Entry<String, Livro> livro : paginaSet) {
+            System.out.println(
+                    livro.getValue().getTitulo() + "\n" + livro.getValue().getQuantidadePaginas() + " páginas");
+        }
+        // TODO estudar mais esses últimos exemplos com o Comparator e a Entry no geral
     }
-    
+
 }
 
 class Livro {
@@ -126,6 +133,15 @@ class ComparatorLivros implements Comparator<Map.Entry<String, Livro>> {
                                                                                          // atributo que está na classe
                                                                                          // e que será utilizado
                                                                                          // para fazer a comparação
+    }
+
+}
+
+class ComparatorPaginas implements Comparator<Map.Entry<String, Livro>> {
+
+    @Override
+    public int compare(Entry<String, Livro> o1, Entry<String, Livro> o2) {
+        return o1.getValue().getQuantidadePaginas() - o2.getValue().getQuantidadePaginas();
     }
 
 }
