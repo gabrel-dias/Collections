@@ -1,25 +1,29 @@
 package cursoantigo.map;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
 public class ExemploMap2 {
     public static void main(String[] args) {
-        Map<String, Livro> livrosAleatorios = new HashMap<>() {
+        Map<String, Livro> livrosAleatorios = new HashMap<>() { // também é possível utilizar uma classe como valor pro
+                                                                // Map
             {
                 put("George R.R. Martin", new Livro("A Tormenta de Espadas", 832));
-                put("Stephen King", new Livro("IT: A coisa", 1104));
+                put("Stephen King", new Livro("IT: A Coisa", 1104));
                 put("J.K. Rowling", new Livro("Harry Potter e a Pedra Filosofal", 208));
             }
         };
 
         System.out.println("--\t Ordem aleatória \t--");
         for (Map.Entry<String, Livro> livro : livrosAleatorios.entrySet()) {
-            System.out.println(livro.getKey() + "\n" + livro.getValue().getTitulo()); // o getter do
-            // título vem do atributo da
-            // classe 'Livro'
+            System.out.println(livro.getKey() + "\n" + livro.getValue().getTitulo()); // o getter do título vem do
+                                                                                      // atributo da classe 'Livro'
         }
 
         System.out.println("--\t Ordem de inserção \t --");
@@ -33,14 +37,29 @@ public class ExemploMap2 {
         for (Map.Entry<String, Livro> livro : livrosInseridos.entrySet()) {
             System.out.println(livro.getKey() + "\n" + livro.getValue().getTitulo());
         }
-        
+
         System.out.println("--\t Ordem de autores \t--");
-        Map<String, Livro> livrosAutores = new TreeMap<>(livrosInseridos);
+        Map<String, Livro> livrosAutores = new TreeMap<>(livrosAleatorios); // o TreeMap constrói um novo Map com os
+                                                                            // elementos ordenados de acordo com ordem
+                                                                            // natural das suas CHAVES
         for (Map.Entry<String, Livro> livro : livrosAutores.entrySet()) {
             System.out.println(livro.getKey() + "\n" + livro.getValue().getTitulo());
         }
+
+        System.out.println("--\t Ordem alfabética dos livros \t--");
+        Set<Map.Entry<String, Livro>> livroSet = new TreeSet<>(new ComparatorLivros()); // para ordenar os valores é
+        // preciso utilizar o Comparator
         
+        livroSet.addAll(livrosAleatorios.entrySet());// é preciso utilizar o entrySet() com o addAll para que todos os
+        // elementos do
+        // Map sejam repassados para o Set
+        for (Map.Entry<String, Livro> livro : livroSet) {
+            System.out.println(livro.getKey() + "\n" + livro.getValue().getTitulo());
+        }
+        
+        // TODO System.out.println("--\t Ordem número de página \t--");
     }
+    
 }
 
 class Livro {
@@ -91,6 +110,22 @@ class Livro {
     @Override
     public String toString() {
         return "Título - " + titulo + ", Páginas - " + quantidadePaginas;
+    }
+
+}
+
+class ComparatorLivros implements Comparator<Map.Entry<String, Livro>> {
+
+    @Override
+    public int compare(Entry<String, Livro> o1, Entry<String, Livro> o2) {
+        return o1.getValue().getTitulo().compareToIgnoreCase(o2.getValue().getTitulo()); // primeiro é utilizado o
+                                                                                         // getValue() para acessar o
+                                                                                         // valor da Entry, que é a
+                                                                                         // classe 'Livro'. Depois é
+                                                                                         // utilizado o getter do
+                                                                                         // atributo que está na classe
+                                                                                         // e que será utilizado
+                                                                                         // para fazer a comparação
     }
 
 }
