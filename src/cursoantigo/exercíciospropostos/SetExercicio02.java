@@ -5,7 +5,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class SetExercicioProposto02 {
+public class SetExercicio02 {
     /*
      * Crie uma classe LinguagemFavorita que possua os atributos nome, anoDeCriacao
      * e ide. Em seguida, crie um conjunto com 3 linguagens e faça um programa que

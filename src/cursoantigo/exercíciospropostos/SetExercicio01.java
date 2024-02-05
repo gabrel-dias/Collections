@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class SetExercicioProposto01 {
+public class SetExercicio01 {
     /*
      * Crie um conjunto contendo as cores do arco-íris e:
      * 
