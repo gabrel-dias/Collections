@@ -3,8 +3,8 @@ package cursoantigo.exercíciospropostos;
 /*
  * Faça um programa que simule um lançamento de dados. Lance o dado 100 vezes e
  * armazene.
- * Depois, mostre quantas vezes cada valor foi conseguido.
+ * Depois, mostre quantas vezes cada valor foi inserido.
  */
 public class MapExercicio2 {
-    
+
 }
