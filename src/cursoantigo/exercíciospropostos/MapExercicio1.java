@@ -18,7 +18,7 @@ Estado = RN - população = 3.534.265
 [x] Exiba todos os estados e suas populações na ordem que foram informados
 [x] Exiba os estados e suas populações em ordem alfabética
 [x] Exiba o estado com menor população e a sua quantidade
-[] Exiba o estado com maior população e a sua quantidade
+[x] Exiba o estado com maior população e a sua quantidade
 [] Exiba a média da população desses estados
 [] Remova os estados com a população menor que 4.000.000
 [] Apague o dicionário de estados
@@ -73,9 +73,23 @@ public class MapExercicio1 {
             if (entrada.getValue().equals(menorPopulacao)) {
                 estadoMenosPopuloso = entrada.getKey();
             }
-            break;
+            break; // esse break aqui é um sacana, coincidentemente o primeiro elemento da entrySet
+                   // é o menor valor, então após isso o loop é anulado e não verifica mais nada.
+                   // O mesmo não poderá fazer a mesma coisa na forEach seguinte, pois é
+                   // necessário que novas verificações sejam feitas até que o elemento de maior
+                   // valor seja encontrado
         }
         System.out.println("--\tEstado com menor população\t--\n" + estadoMenosPopuloso + " = " + menorPopulacao);
 
+        // estado com mais pessoas
+        double maiorPopulacao = Collections.max(nordesteTreeMap.values());
+        String estadoMaisPopuloso = "";
+        for (Map.Entry<String, Double> entrada : nordesteTreeMap.entrySet()) {
+            if (entrada.getValue().equals(maiorPopulacao)) {
+                estadoMaisPopuloso = entrada.getKey();
+            }
+            // break;
+        }
+        System.out.println("--\tEstado com maior população\t--\n" + estadoMaisPopuloso + " = " + maiorPopulacao);
     }
 }
