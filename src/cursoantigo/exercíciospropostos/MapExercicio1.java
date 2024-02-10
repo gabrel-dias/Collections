@@ -21,9 +21,9 @@ Estado = RN - população = 3.534.265
 [x] Exiba o estado com menor população e a sua quantidade
 [x] Exiba o estado com maior população e a sua quantidade
 [x] Exiba a média da população desses estados
-[] Remova os estados com a população menor que 4.000.000
-[] Apague o dicionário de estados
-[] Confira se o dicionário está vazio */
+[x] Remova os estados com a população menor que 4.000.000
+[x] Apague o dicionário de estados
+[x] Confira se o dicionário está vazio */
 
 public class MapExercicio1 {
     public static void main(String[] args) {
@@ -107,9 +107,25 @@ public class MapExercicio1 {
 
         // double soma2 = 0d;
         // for (Map.Entry<String, Double> somateste : nordesteMap.entrySet()) {
-        //     soma2 += somateste.getValue();
+        // soma2 += somateste.getValue();
         // }
         // double media2 = soma2 / nordesteMap.size();
         // System.out.println(media2);
+
+        System.out.println("--\tRemovendo estados com população menor que 4.000.000 pessoas\t--");
+        Iterator<Map.Entry<String, Double>> retiraIterator = nordesteMap.entrySet().iterator();
+        while (retiraIterator.hasNext()) {
+            Map.Entry<String, Double> entrada = retiraIterator.next(); // todos os valores do iterador serão armazenados
+                                                                       // na variável "entrada"
+            if (entrada.getValue() < 4000000d) {
+                retiraIterator.remove();
+            }
+
+        }
+        System.out.println("Dicionário após remoção:\n" + nordesteMap);
+    
+        System.out.println("--\tApagando dicionário--\t");
+        nordesteMap.clear();
+        System.out.println(nordesteMap.isEmpty());
     }
 }
