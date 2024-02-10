@@ -2,6 +2,7 @@ package cursoantigo.exercíciospropostos;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.TreeMap;
@@ -19,7 +20,7 @@ Estado = RN - população = 3.534.265
 [x] Exiba os estados e suas populações em ordem alfabética
 [x] Exiba o estado com menor população e a sua quantidade
 [x] Exiba o estado com maior população e a sua quantidade
-[] Exiba a média da população desses estados
+[x] Exiba a média da população desses estados
 [] Remova os estados com a população menor que 4.000.000
 [] Apague o dicionário de estados
 [] Confira se o dicionário está vazio */
@@ -91,5 +92,24 @@ public class MapExercicio1 {
             // break;
         }
         System.out.println("--\tEstado com maior população\t--\n" + estadoMaisPopuloso + " = " + maiorPopulacao);
+
+        double soma = 0d; // para que a atribuição += funcione, a variável precisa estar previamente
+                          // inicializada para que seja somada COM ALGO e então atribuída
+
+        // seria prudente dar mais uma estudada na aplicação do Iterator
+        Iterator<Double> somaIterator = nordesteMap.values().iterator();
+        while (somaIterator.hasNext()) {
+            soma += somaIterator.next();
+        }
+        double media = soma / nordesteMap.size();
+
+        System.out.println("A média dessa merda é: " + media);
+
+        // double soma2 = 0d;
+        // for (Map.Entry<String, Double> somateste : nordesteMap.entrySet()) {
+        //     soma2 += somateste.getValue();
+        // }
+        // double media2 = soma2 / nordesteMap.size();
+        // System.out.println(media2);
     }
 }
