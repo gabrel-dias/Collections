@@ -15,7 +15,7 @@ public class Agenda {
         };
         System.out.println(agenda);
         for (Map.Entry<Integer, Contatos> entry : agenda.entrySet()) { // entrySet sendo utilizado para trabalhar com os
-            // elementos do dicionário de forma separada
+                                                                       // elementos do dicionário de forma separada
             System.out.println(entry.getValue().getNome() + " - " + entry.getValue().getNumero());
         }
 
@@ -42,9 +42,11 @@ public class Agenda {
 
         System.out.println("--\tOrdem de numero\t--");
         // utilização do método estático do Comparator, que precisa ter uma Function
-// o tipo de retorno da Function deve ser alterado para o tipo que se deseja ser retornado
-// após isso, é só implementar o método apply() e fazer o @Override no return
-        Set<Map.Entry<Integer, Contatos>> set = new TreeSet<>(Comparator.comparing(integerContatosEntry -> integerContatosEntry.getValue().getNumero()));
+        // o tipo de retorno da Function deve ser alterado para o tipo que se deseja ser
+        // retornado
+        // após isso, é só implementar o método apply() e fazer o @Override no return
+        Set<Map.Entry<Integer, Contatos>> set = new TreeSet<>(
+                Comparator.comparing(integerContatosEntry -> integerContatosEntry.getValue().getNumero()));
         // ou fazer com um lambda(???)
 
         set.addAll(agenda3.entrySet());
@@ -53,7 +55,8 @@ public class Agenda {
         }
 
         System.out.println("--\tOrdem de contato\t--");
-        Set<Map.Entry<Integer, Contatos>> set2 = new TreeSet<>(Comparator.comparing(contatosEntry -> contatosEntry.getValue().getNome()));
+        Set<Map.Entry<Integer, Contatos>> set2 = new TreeSet<>(
+                Comparator.comparing(contatosEntry -> contatosEntry.getValue().getNome()));
         set2.addAll(agenda3.entrySet());
         for (Entry<Integer, Contatos> entry : set2) {
             System.out.println(entry.getValue().getNome() + " - " + entry.getValue().getNumero());
