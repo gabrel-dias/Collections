@@ -1,4 +1,4 @@
-package cursoantigo.stream;
+package cursoantigo.map;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -46,12 +46,12 @@ public class Agenda {
         }
 
         System.out.println("--\tOrdem de numero\t--");
-        Set<Map.Entry<Integer, Contatos>> set = new TreeSet<>(new ); // é preciso fazer um
-                                                                 // Set<Map.Entry<Integer,Contatos>>
-                                                                 // para poder instanciar a classe
-                                                                 // com o Comparator e trabalhar
-                                                                 // com os elementos do dicionário
-                                                                 // de forma independente
+        Set<Map.Entry<Integer, Contatos>> set = new TreeSet<>(new ComparatorNumero()); // é preciso fazer um
+                                                                                       // Set<Map.Entry<Integer,Contatos>>
+                                                                                       // para poder instanciar a classe
+                                                                                       // com o Comparator e trabalhar
+                                                                                       // com os elementos do dicionário
+                                                                                       // de forma independente
         set.addAll(agenda3.entrySet());
         for (Entry<Integer, Contatos> entry : set) {
             System.out.println(entry.getValue().getNome() + " - " + entry.getValue().getNumero());
