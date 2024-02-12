@@ -1,11 +1,6 @@
 package cursoantigo.stream;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
-import java.util.TreeSet;
+import java.util.*;
 import java.util.Map.Entry;
 
 public class Agenda {
@@ -46,7 +41,12 @@ public class Agenda {
         }
 
         System.out.println("--\tOrdem de numero\t--");
-        Set<Map.Entry<Integer, Contatos>> set = new TreeSet<>(new ); // é preciso fazer um
+        Set<Map.Entry<Integer, Contatos>> set = new TreeSet<>(new Comparator<Entry<Integer, Contatos>>() {
+            @Override
+            public int compare(Entry<Integer, Contatos> o1, Entry<Integer, Contatos> o2) {
+                return 0;
+            }
+        }); // é preciso fazer um
                                                                  // Set<Map.Entry<Integer,Contatos>>
                                                                  // para poder instanciar a classe
                                                                  // com o Comparator e trabalhar
@@ -58,7 +58,12 @@ public class Agenda {
         }
 
         System.out.println("--\tOrdem de contato\t--");
-        Set<Map.Entry<Integer, Contatos>> set2 = new TreeSet<>(new ComparatorContato());
+        Set<Map.Entry<Integer, Contatos>> set2 = new TreeSet<>(new Comparator<Entry<Integer, Contatos>>() {
+            @Override
+            public int compare(Entry<Integer, Contatos> o1, Entry<Integer, Contatos> o2) {
+                return 0;
+            }
+        });
         set2.addAll(agenda3.entrySet());
         for (Entry<Integer, Contatos> entry : set2) {
             System.out.println(entry.getValue().getNome() + " - " + entry.getValue().getNumero());
