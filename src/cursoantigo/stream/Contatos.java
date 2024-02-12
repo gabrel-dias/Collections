@@ -60,11 +60,22 @@ public class Contatos {
 class ComparatorNumero implements Comparator<Map.Entry<Integer, Contatos>> { // é preciso implementar a interface
                                                                              // especificando o tipo do EntrySet que
                                                                              // será usado para a comparação, assim como
-                                                                             // uma classe seria usada
+                                                                             // uma classe seria usada, e fazer o mesmo
+                                                                             // no método implementado, nesse caso o
+                                                                             // compare()
 
     @Override
     public int compare(Entry<Integer, Contatos> o1, Entry<Integer, Contatos> o2) {
         return Integer.compare(o1.getValue().getNumero(), o2.getValue().getNumero());
     }
+
+}
+
+class ComparatorContato implements Comparator<Map.Entry<Integer, Contatos>> {
+
+    @Override
+    public int compare(Entry<Integer, Contatos> o1, Entry<Integer, Contatos> o2) {
+return o1.getValue().getNome().compareToIgnoreCase(o2.getValue().getNome());
+}
 
 }

@@ -1,4 +1,4 @@
-package cursoantigo.stream.propostoCamila;
+package cursoantigo.stream.propostocamila;
 
 import java.util.*;
 

@@ -45,13 +45,22 @@ public class Agenda {
             System.out.println(entry.getValue().getNome() + " - " + entry.getValue().getNumero());
         }
 
-        System.out.println("--\tOrdem numérica\t--");
+        System.out.println("--\tOrdem de numero\t--");
         Set<Map.Entry<Integer, Contatos>> set = new TreeSet<>(new ComparatorNumero()); // é preciso fazer um
                                                                                        // Set<Map.Entry<Integer,Contatos>>
                                                                                        // para poder instanciar a classe
-                                                                                       // com oComparator
+                                                                                       // com o Comparator e trabalhar
+                                                                                       // com os elementos do dicionário
+                                                                                       // de forma independente
         set.addAll(agenda3.entrySet());
         for (Entry<Integer, Contatos> entry : set) {
+            System.out.println(entry.getValue().getNome() + " - " + entry.getValue().getNumero());
+        }
+
+        System.out.println("--\tOrdem de contato\t--");
+        Set<Map.Entry<Integer, Contatos>> set2 = new TreeSet<>(new ComparatorContato());
+        set2.addAll(agenda3.entrySet());
+        for (Entry<Integer, Contatos> entry : set2) {
             System.out.println(entry.getValue().getNome() + " - " + entry.getValue().getNumero());
         }
 
