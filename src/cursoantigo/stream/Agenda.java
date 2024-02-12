@@ -46,12 +46,7 @@ public class Agenda {
             public int compare(Entry<Integer, Contatos> o1, Entry<Integer, Contatos> o2) {
                 return 0;
             }
-        }); // é preciso fazer um
-                                                                 // Set<Map.Entry<Integer,Contatos>>
-                                                                 // para poder instanciar a classe
-                                                                 // com o Comparator e trabalhar
-                                                                 // com os elementos do dicionário
-                                                                 // de forma independente
+        });
         set.addAll(agenda3.entrySet());
         for (Entry<Integer, Contatos> entry : set) {
             System.out.println(entry.getValue().getNome() + " - " + entry.getValue().getNumero());
