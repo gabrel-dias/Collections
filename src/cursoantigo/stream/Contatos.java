@@ -1,6 +1,10 @@
 package cursoantigo.stream;
 
-public class Contato {
+import java.util.Comparator;
+import java.util.Map;
+import java.util.Map.Entry;
+
+public class Contatos {
 
     private String nome;
     private int numero;
@@ -13,7 +17,7 @@ public class Contato {
         return numero;
     }
 
-    public Contato(String nome, int numero) {
+    public Contatos(String nome, int numero) {
         this.nome = nome;
         this.numero = numero;
     }
@@ -40,7 +44,7 @@ public class Contato {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Contato other = (Contato) obj;
+        Contatos other = (Contatos) obj;
         if (nome == null) {
             if (other.nome != null)
                 return false;
@@ -49,6 +53,15 @@ public class Contato {
         if (numero != other.numero)
             return false;
         return true;
+    }
+
+}
+
+class ComparatorNumero implements Comparator<Map.Entry<Integer, Contatos>> {
+
+    @Override
+    public int compare(Entry<Integer, Contatos> o1, Entry<Integer, Contatos> o2) {
+        return Integer.compare(o1.getValue().getNumero(), o2.getValue().getNumero());
     }
 
 }
