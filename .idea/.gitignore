@@ -1,3 +1,6 @@
+# Default ignored files
+/shelf/
+/.idea/workspace.xml
 *.class
 *.pptx#
 bin/cursoAntigo/set/.~lock.SET.pptx#
