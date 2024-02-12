@@ -41,10 +41,10 @@ public class Agenda {
         }
 
         System.out.println("--\tOrdem de numero\t--");
-        Set<Map.Entry<Integer, Contatos>> set = new TreeSet<>(new Comparator<Entry<Integer, Contatos>>() {
+        Set<Map.Entry<Integer, Contatos>> set = new TreeSet<>(new Comparator<Entry<Integer, Contatos>>() { //utilização da classe anônima com o Comparator
             @Override
             public int compare(Entry<Integer, Contatos> o1, Entry<Integer, Contatos> o2) {
-                return 0;
+                return Integer.compare(o1.getValue().getNumero(), o2.getValue().getNumero());
             }
         });
         set.addAll(agenda3.entrySet());
@@ -56,7 +56,7 @@ public class Agenda {
         Set<Map.Entry<Integer, Contatos>> set2 = new TreeSet<>(new Comparator<Entry<Integer, Contatos>>() {
             @Override
             public int compare(Entry<Integer, Contatos> o1, Entry<Integer, Contatos> o2) {
-                return 0;
+                return o1.getValue().getNome().compareToIgnoreCase(o2.getValue().getNome());
             }
         });
         set2.addAll(agenda3.entrySet());
