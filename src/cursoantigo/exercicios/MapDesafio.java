@@ -1,4 +1,4 @@
-package cursoantigo.exercícios;
+package cursoantigo.exercicios;
 
 /*
  * Faça um programa que simule um lançamento de dados. Lance o dado 100 vezes e

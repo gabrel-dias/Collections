@@ -1,4 +1,4 @@
-package cursoantigo.exercícios.respostas;
+package cursoantigo.exercicios.respostas;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -13,7 +13,7 @@ e em que mês elas ocorreram (mostrar o mês por extenso: 1 – Janeiro, 2 – F
 public class ListExercicioProposto01 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        List<Double> temperaturas = new ArrayList<Double>();
+        List<Double> temperaturas = new ArrayList<>();
 
         // Adicionando as temperaturas na lista:
         int count = 0;

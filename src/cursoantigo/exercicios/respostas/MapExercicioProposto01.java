@@ -1,4 +1,4 @@
-package cursoantigo.exercícios.respostas;
+package cursoantigo.exercicios.respostas;
 
 import java.util.*;
 
@@ -12,43 +12,43 @@ Dada a população estimada de alguns estados do nordeste brasileiro, faça:
 public class MapExercicioProposto01 {
     public static void main(String[] args) {
         System.out.println("Crie um dicionário que relacione os estados e suas respectivas populações: ");
-        Map<String, Integer> populaçãoEstadosNE = new HashMap<>() {{
+        Map<String, Integer> populacaoEstadosNE = new HashMap<>() {{
             put("PE", 9616621);
             put("AL", 3351543);
             put("CE", 9187103);
             put("RN", 3534265);
         }};
-        System.out.println(populaçãoEstadosNE);
+        System.out.println(populacaoEstadosNE);
 
         System.out.println("Substitua a população do estado RN por : 3.534.165");
-        populaçãoEstadosNE.put("RN", 3534165);
-        System.out.println(populaçãoEstadosNE);
+        populacaoEstadosNE.put("RN", 3534165);
+        System.out.println(populacaoEstadosNE);
 
         System.out.println("Confira se o estado da Paraíba (PB) tucson está no dicionário, caso não, adicione " +
                 "PB - 4.039.277: ");
-        populaçãoEstadosNE.put("PB", 4039277);
-        System.out.println(populaçãoEstadosNE);
+        populacaoEstadosNE.put("PB", 4039277);
+        System.out.println(populacaoEstadosNE);
 
-        System.out.println("Exiba a população do estado PE: " + populaçãoEstadosNE.get("PE"));
+        System.out.println("Exiba a população do estado PE: " + populacaoEstadosNE.get("PE"));
 
         System.out.println("Exiba todos os estados e suas populaçãos na ordem em que foram informados: ");
-        Map<String, Integer> populaçãoEstadosNE2 = new LinkedHashMap<>() {{
+        Map<String, Integer> populacaoEstadosNE2 = new LinkedHashMap<>() {{
             put("PE", 9616621);
             put("AL", 3351543);
             put("CE", 9187103);
             put("RN", 3534265);
             put("PB", 4039277);
         }};
-        System.out.println(populaçãoEstadosNE2);
+        System.out.println(populacaoEstadosNE2);
 
         System.out.println("Exiba todos os estados e suas populações na ordem alfabética: ");
-        Map<String, Integer> populaçãoEstadosNE3 = new TreeMap<>(populaçãoEstadosNE);
-        System.out.println(populaçãoEstadosNE3);
+        Map<String, Integer> populacaoEstadosNE3 = new TreeMap<>(populacaoEstadosNE);
+        System.out.println(populacaoEstadosNE3);
 
-        Collection<Integer> populacao = populaçãoEstadosNE.values();
+        Collection<Integer> populacao = populacaoEstadosNE.values();
         String estadoMaiorPopulacao = "";
         String estadoMenorPopulacao = "";
-        for (Map.Entry<String, Integer> entry : populaçãoEstadosNE.entrySet()) {
+        for (Map.Entry<String, Integer> entry : populacaoEstadosNE.entrySet()) {
             if (entry.getValue().equals(Collections.max(populacao))) estadoMaiorPopulacao = entry.getKey();
             if (entry.getValue().equals(Collections.min(populacao))) estadoMenorPopulacao = entry.getKey();
         }
@@ -58,32 +58,32 @@ public class MapExercicioProposto01 {
                 estadoMaiorPopulacao, Collections.max(populacao));
 
         int soma = 0;
-        Iterator<Integer> iterator = populaçãoEstadosNE.values().iterator();
+        Iterator<Integer> iterator = populacaoEstadosNE.values().iterator();
         while (iterator.hasNext()) {
             soma += iterator.next();
         }
         System.out.println("Exiba a soma da população desses estados: " + soma);
 /*        int soma2 = 0;
-       for(Map.Entry<String, Integer> entry : populaçãoEstadosNE.entrySet()) {
+       for(Map.Entry<String, Integer> entry : populacaoEstadosNE.entrySet()) {
            soma2 += entry.getValue();
        }
 
 
 */
 
-        System.out.println("Exiba a média da população deste dicionário de estados: " + (soma / populaçãoEstadosNE.size()));
+        System.out.println("Exiba a média da população deste dicionário de estados: " + (soma / populacaoEstadosNE.size()));
         System.out.println("Remova os estados com a população menor que 4.000.000: ");
-        Iterator<Integer> iterator1 = populaçãoEstadosNE.values().iterator();
+        Iterator<Integer> iterator1 = populacaoEstadosNE.values().iterator();
         while (iterator1.hasNext()) {
             if (iterator1.next() <= 4000000) iterator1.remove();
         }
-        System.out.println(populaçãoEstadosNE);
+        System.out.println(populacaoEstadosNE);
 
         System.out.println("Apague o dicionario de estados com suas respectivas populações estimadas: ");
-        populaçãoEstadosNE.clear();
-        System.out.println(populaçãoEstadosNE);
+        populacaoEstadosNE.clear();
+        System.out.println(populacaoEstadosNE);
 
-        System.out.println("Confira se a lista está vazia: " + populaçãoEstadosNE.isEmpty());
+        System.out.println("Confira se a lista está vazia: " + populacaoEstadosNE.isEmpty());
 
     }
 }

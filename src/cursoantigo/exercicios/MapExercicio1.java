@@ -1,4 +1,4 @@
-package cursoantigo.exercícios;
+package cursoantigo.exercicios;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -42,7 +42,7 @@ public class MapExercicio1 {
         System.out.println("Qual o valor da chave RN ? " + nordesteMap.get("RN"));
 
         System.out.println("PB está no dicionário? " + nordesteMap.containsKey("PB"));
-        if (nordesteMap.containsKey("PB") == false)
+        if (!nordesteMap.containsKey("PB"))
             nordesteMap.put("PB", 4039277.0);
 
         System.out.println("A população de PE é: " + nordesteMap.get("PE"));

@@ -1,4 +1,4 @@
-package cursoantigo.exercícios;
+package cursoantigo.exercicios;
 
 import java.util.ArrayList;
 import java.util.Iterator;

@@ -1,4 +1,4 @@
-package cursoantigo.exercícios;
+package cursoantigo.exercicios;
 
 import java.util.Comparator;
 import java.util.Iterator;
@@ -92,8 +92,10 @@ public class SetExercicio01 {
         System.out.println("\nLimpando o conjunto...");
         coresSet.removeAll(coresSet);
 
-        if (coresSet.isEmpty() == true)
+        if (coresSet.isEmpty()) // o método isEmpty() retorna um boolean
             System.out.println("\nO conjunto está vazio? Sim\n");
+        else
+            System.out.println("\nO conjunto está vazio? Não\n");
     }
 }
 
@@ -149,7 +151,7 @@ class ComparatorCoresInversas implements Comparator<Cores> {
 
     @Override
     public int compare(Cores o1, Cores o2) {
-        return -1;
+        return o2.getCor().compareToIgnoreCase(o1.getCor());
     }
 
 }

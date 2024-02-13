@@ -1,4 +1,4 @@
-package cursoantigo.exercícios.respostas;
+package cursoantigo.exercicios.respostas;
 
 import java.util.*;
 
@@ -34,17 +34,17 @@ public class SetExercicioProposto02 {
         for (LinguagemFavorita linguagem : minhasLinguagensFavoritas2) System.out.println(linguagem);
 
         System.out.println("--------\tOrdem IDE\t--------");
-        Set<LinguagemFavorita> minhasLinguagensFavoritas3 = new TreeSet<LinguagemFavorita>(new ComparatorIde());
+        Set<LinguagemFavorita> minhasLinguagensFavoritas3 = new TreeSet<>(new ComparatorIde());
         minhasLinguagensFavoritas3.addAll(minhasLinguagensFavoritas);
         for (LinguagemFavorita linguagem : minhasLinguagensFavoritas3) System.out.println(linguagem);
 
         System.out.println("--------\tOrdem Ano de Criacao e Nome\t--------");
-        Set<LinguagemFavorita> minhasLinguagensFavoritas4 = new TreeSet<LinguagemFavorita>(new ComparatorAnoDeCriacaoENome());
+        Set<LinguagemFavorita> minhasLinguagensFavoritas4 = new TreeSet<>(new ComparatorAnoDeCriacaoENome());
         minhasLinguagensFavoritas4.addAll(minhasLinguagensFavoritas);
         for (LinguagemFavorita linguagem : minhasLinguagensFavoritas4) System.out.println(linguagem);
 
         System.out.println("--------\tOrdem Nome - Ano de Criacao - IDE\t--------");
-        Set<LinguagemFavorita> minhasLinguagensFavoritas5 = new TreeSet<LinguagemFavorita>(new ComparatorNomeAnoDeCriacaoIde());
+        Set<LinguagemFavorita> minhasLinguagensFavoritas5 = new TreeSet<>(new ComparatorNomeAnoDeCriacaoIde());
         minhasLinguagensFavoritas5.addAll(minhasLinguagensFavoritas3);
         for (LinguagemFavorita linguagem : minhasLinguagensFavoritas5) System.out.println(linguagem);
 

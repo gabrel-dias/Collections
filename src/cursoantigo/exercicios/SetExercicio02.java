@@ -1,4 +1,4 @@
-package cursoantigo.exercícios;
+package cursoantigo.exercicios;
 
 import java.util.Comparator;
 import java.util.LinkedHashSet;
