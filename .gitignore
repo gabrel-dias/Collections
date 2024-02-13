@@ -6,3 +6,4 @@ out/
 *.pptx#
 .vscode/launch.json
 .~lock*
+*.iml
