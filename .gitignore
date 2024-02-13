@@ -1,9 +1,9 @@
 /shelf/
-/.idea/workspace.xml
+*bin
+out/
+.idea/
 *.class
 *.pptx#
-bin/cursoAntigo/set/.~lock.SET.pptx#
 .vscode/launch.json
-*bin
 .~lock*
-out/
+*.iml
