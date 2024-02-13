@@ -1,9 +1,5 @@
 package cursoantigo.stream;
 
-import java.util.Comparator;
-import java.util.Map;
-import java.util.Map.Entry;
-
 public class Contatos {
 
     private String nome;
