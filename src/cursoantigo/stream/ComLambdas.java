@@ -13,6 +13,7 @@ public class ComLambdas {
             add(new Gato("gustava", "marrom", 13));
         }};
         gatoes.sort(Comparator.comparing((Function<Gato, String>) gato -> gato.getNome()));
+        System.out.println(gatoes);
         // entendi porra nenhuma desse lambda, sinceramente
     }
 }

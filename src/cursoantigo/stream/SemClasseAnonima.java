@@ -12,7 +12,8 @@ public class SemClasseAnonima {
             add(new Gato("felipe", "branco", 14));
             add(new Gato("tomas", "preto", 12));
         }};
-       gatoes.sort(new ComparatorIdade()); //utiliza a classe ComparatorIdade que implementa o comparator
+       gatoes.sort(new ComparatorIdade()); // sem classe anônima, utiliza a classe ComparatorIdade que implementa
+        // o Comparator
         System.out.println(gatoes);
     }
 }

@@ -1,7 +1,7 @@
 import java.text.NumberFormat;
 import java.util.Locale;
 
-public class TesteFormatador {
+ public class TesteFormatador {
     public static void main(String[] args) {
         double numero = 9616621.0;
         NumberFormat formatador = NumberFormat.getInstance(Locale.getDefault());
