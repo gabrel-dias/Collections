@@ -2,6 +2,7 @@ package cursoantigo.stream;
 
 import java.util.*;
 import java.util.Map.Entry;
+import java.util.function.Function;
 
 public class Agenda {
     public static void main(String[] args) {
@@ -34,25 +35,41 @@ public class Agenda {
         }
 
         System.out.println("--\tOrdem de chave\t--");
-        Map<Integer, Contatos> agenda3 = new TreeMap<>(agenda2);
+        Map<Integer, Contatos> agenda3 = new TreeMap<>(agenda2); // ordenação padrão do TreeMap é pela chave
         System.out.println(agenda3);
         for (Map.Entry<Integer, Contatos> entry : agenda3.entrySet()) {
             System.out.println(entry.getValue().getNome() + " - " + entry.getValue().getNumero());
         }
 
         System.out.println("--\tOrdem de numero\t--");
-        Set<Map.Entry<Integer, Contatos>> set = new TreeSet<>(
+        /* Set<Map.Entry<Integer, Contatos>> set = new TreeSet<>(new Comparator<Entry<Integer, Contatos>>() {
+            utilização de classe anônima na interface
+            @Override
+            public int compare(Entry<Integer, Contatos> o1, Entry<Integer, Contatos> o2) {
+                return Integer.compare(o1.getValue().getNumero(), o2.getValue().getNumero());
+            }
+        }); */
+        Set<Map.Entry<Integer, Contatos>> set = new TreeSet<>(Comparator.comparing(
+                new Function<Entry<Integer, Contatos>, Integer>() {
+                    // interessante notar que depois da vírgula dessa instanciação, é definido
+                    // qual o tipo do atributo que será usado na comparação, nesse caso "Integer"
+            @Override
+            public Integer apply(Entry<Integer, Contatos> integerContatosEntry) {
+                return integerContatosEntry.getValue().getNumero();
+            }
+        }));
 
-        // utilização do método estático do Comparator, que precisa ter uma Function
-        // o tipo de retorno da Function deve ser alterado para o tipo que se deseja ser
-        // retornado
-        // após isso, é só implementar o método apply() e fazer o @Override no return
-                Comparator.comparing(integerContatosEntry -> integerContatosEntry.getValue().getNumero()));
-        // ou fazer com um lambda(???)
+        /* utilização do método estático do Comparator, que precisa ter uma Function
+         o tipo de retorno da Function deve ser alterado para o tipo que se deseja ser
+         retornado após isso, é só implementar o método apply() e fazer o @Override no return
+
+        Set<Map.Entry<Integer, Contatos>> set = new TreeSet<>(Comparator.comparing(
+        integerContatosEntry -> integerContatosEntry.getValue().getNumero()));
+        ou fazer com um lambda dessa forma */
 
         set.addAll(agenda3.entrySet());
         for (Entry<Integer, Contatos> entry : set) {
-            System.out.println(entry.getValue().getNome() + " - " + entry.getValue().getNumero());
+            System.out.println(entry.getValue().getNumero() + " - " + entry.getValue().getNome());
         }
 
         System.out.println("--\tOrdem de contato\t--");
