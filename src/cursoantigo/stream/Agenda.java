@@ -41,11 +41,12 @@ public class Agenda {
         }
 
         System.out.println("--\tOrdem de numero\t--");
+        Set<Map.Entry<Integer, Contatos>> set = new TreeSet<>(
+
         // utilização do método estático do Comparator, que precisa ter uma Function
         // o tipo de retorno da Function deve ser alterado para o tipo que se deseja ser
         // retornado
         // após isso, é só implementar o método apply() e fazer o @Override no return
-        Set<Map.Entry<Integer, Contatos>> set = new TreeSet<>(
                 Comparator.comparing(integerContatosEntry -> integerContatosEntry.getValue().getNumero()));
         // ou fazer com um lambda(???)
 
