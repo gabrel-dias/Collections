@@ -2,7 +2,6 @@ package cursoantigo.stream;
 
 import java.util.*;
 import java.util.Map.Entry;
-import java.util.function.Function;
 
 public class Agenda {
     public static void main(String[] args) {
@@ -14,7 +13,7 @@ public class Agenda {
                 put(3, new Contatos("Jon", 1111));
             }
         };
-        System.out.println(agenda);
+
         for (Map.Entry<Integer, Contatos> entry : agenda.entrySet()) { // entrySet sendo utilizado para trabalhar com os
                                                                        // elementos do dicionário de forma separada
             System.out.println(entry.getValue().getNome() + " - " + entry.getValue().getNumero());
@@ -38,7 +37,7 @@ public class Agenda {
         Map<Integer, Contatos> agenda3 = new TreeMap<>(agenda2); // ordenação padrão do TreeMap é pela chave
         System.out.println(agenda3);
         for (Map.Entry<Integer, Contatos> entry : agenda3.entrySet()) {
-            System.out.println(entry.getValue().getNome() + " - " + entry.getValue().getNumero());
+            System.out.println(entry.getKey() + " - " + entry.getValue().getNome() + " - " + entry.getValue().getNumero());
         }
 
         System.out.println("--\tOrdem de numero\t--");
@@ -49,24 +48,23 @@ public class Agenda {
                 return Integer.compare(o1.getValue().getNumero(), o2.getValue().getNumero());
             }
         }); */
-        Set<Map.Entry<Integer, Contatos>> set = new TreeSet<>(Comparator.comparing(
+
+        /* Set<Map.Entry<Integer, Contatos>> set = new TreeSet<>(Comparator.comparing(
                 new Function<Entry<Integer, Contatos>, Integer>() {
-                    // interessante notar que depois da vírgula dessa instanciação, é definido
-                    // qual o tipo do atributo que será usado na comparação, nesse caso "Integer"
+                    interessante notar que depois da vírgula dessa instanciação, é definido
+                    qual o tipo do atributo que será usado na comparação, nesse caso "Integer"
             @Override
             public Integer apply(Entry<Integer, Contatos> integerContatosEntry) {
                 return integerContatosEntry.getValue().getNumero();
             }
-        }));
+        })); */
 
-        /* utilização do método estático do Comparator, que precisa ter uma Function
+        /* utilização do método estático do Comparator(comparing), que precisa ter uma Function
          o tipo de retorno da Function deve ser alterado para o tipo que se deseja ser
-         retornado após isso, é só implementar o método apply() e fazer o @Override no return
+         retornado após isso, é só implementar o método apply() e fazer o @Override no return */
 
-        Set<Map.Entry<Integer, Contatos>> set = new TreeSet<>(Comparator.comparing(
-        integerContatosEntry -> integerContatosEntry.getValue().getNumero()));
-        ou fazer com um lambda dessa forma */
-
+        Set<Map.Entry<Integer, Contatos>> set = new TreeSet<>( // utilização do lambda no método comparing
+                Comparator.comparing(integerContatosEntry -> integerContatosEntry.getValue().getNumero()));
         set.addAll(agenda3.entrySet());
         for (Entry<Integer, Contatos> entry : set) {
             System.out.println(entry.getValue().getNumero() + " - " + entry.getValue().getNome());
@@ -74,11 +72,12 @@ public class Agenda {
 
         System.out.println("--\tOrdem de contato\t--");
         Set<Map.Entry<Integer, Contatos>> set2 = new TreeSet<>(
-                Comparator.comparing(contatosEntry -> contatosEntry.getValue().getNome()));
+                Comparator.comparing(integerContatosEntry -> integerContatosEntry.getValue().getNome()));
         set2.addAll(agenda3.entrySet());
         for (Entry<Integer, Contatos> entry : set2) {
             System.out.println(entry.getValue().getNome() + " - " + entry.getValue().getNumero());
         }
 
+    //TODO continuar aqui na próxima aula
     }
 }
