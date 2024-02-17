@@ -1,4 +1,4 @@
-package cursonovo.exercícios.list.ordenação;
+package cursonovo.exercicios.list.ordenação;
 
 import java.util.ArrayList;
 import java.util.Collections;

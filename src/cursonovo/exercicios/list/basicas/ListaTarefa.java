@@ -1,4 +1,4 @@
-package cursonovo.exercícios.list.basicas;
+package cursonovo.exercicios.list.basicas;
 
 import java.util.ArrayList;
 import java.util.List;

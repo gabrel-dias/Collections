@@ -1,4 +1,4 @@
-package cursonovo.exercícios.set.pesquisa;
+package cursonovo.exercicios.set.pesquisa;
 
 public class Contato {
     private String nome;

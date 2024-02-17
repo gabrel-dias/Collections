@@ -1,4 +1,4 @@
-package cursonovo.exercícios.list.pesquisa;
+package cursonovo.exercicios.list.pesquisa;
 
 import java.util.ArrayList;
 import java.util.List;

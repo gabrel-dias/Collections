@@ -1,4 +1,4 @@
-package cursonovo.exercícios.set.basicas;
+package cursonovo.exercicios.set.basicas;
 
 import java.util.HashSet;
 import java.util.Set;
