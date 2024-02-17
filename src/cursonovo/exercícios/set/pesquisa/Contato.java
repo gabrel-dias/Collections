@@ -58,20 +58,4 @@ public class Contato {
             return false;
         return true;
     }
-//TODO entender qual a diferença desses dois conjuntos (acima e abaixo) de hashCode e de equals
-//     @Override
-//     public int hashCode() {
-//         return Objects.hash(getNome());
-//     }
-
-
-//     @Override
-//   public boolean equals(Object o) {
-//     if (this == o) return true;
-//     if (!(o instanceof Contato contato)) return false;
-//     return Objects.equals(getNome(), contato.getNome());
-//   }
-
-
-   
 }

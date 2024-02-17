@@ -59,11 +59,13 @@ public class Agenda {
             }
         })); */
 
-        /* utilização do método estático do Comparator(comparing), que precisa ter uma Function
+        /* utilização do método estático do Comparator(comparing), que precisa ter uma Function.
          o tipo de retorno da Function deve ser alterado para o tipo que se deseja ser
-         retornado após isso, é só implementar o método apply() e fazer o @Override no return */
+         retornado e após isso, é só implementar o método apply() e fazer o @Override no return */
 
         Set<Map.Entry<Integer, Contatos>> set = new TreeSet<>( // utilização do lambda no método comparing
+                // pelo que eu entendi, o lambda serve para "simplificar", fazendo suposições fodas
+                // sobre as classses e interfaces
                 Comparator.comparing(integerContatosEntry -> integerContatosEntry.getValue().getNumero()));
         set.addAll(agenda3.entrySet());
         for (Entry<Integer, Contatos> entry : set) {
