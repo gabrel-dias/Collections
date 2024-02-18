@@ -7,13 +7,15 @@ import java.util.Objects;
 
 public class SemClasseAnonima {
     public static void main(String[] args) {
-        List<Gato> gatoes = new ArrayList<>(){{
-            add(new Gato("gustava", "marrom", 13));
-            add(new Gato("felipe", "branco", 14));
-            add(new Gato("tomas", "preto", 12));
-        }};
-       gatoes.sort(new ComparatorIdade()); // sem classe anônima, utiliza a classe ComparatorIdade que implementa
-        // o Comparator
+        List<Gato> gatoes = new ArrayList<>() {
+            {
+                add(new Gato("gustava", "marrom", 13));
+                add(new Gato("felipe", "branco", 14));
+                add(new Gato("tomas", "preto", 12));
+            }
+        };
+        gatoes.sort(new ComparatorIdade()); // sem classe anônima, utiliza a classe ComparatorIdade que implementa o
+                                            // Comparator
         System.out.println(gatoes);
     }
 }
@@ -24,8 +26,10 @@ class Gato {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         Gato gato = (Gato) o;
         return idade == gato.idade && Objects.equals(nome, gato.nome) && Objects.equals(cor, gato.cor);
     }
@@ -37,7 +41,7 @@ class Gato {
 
     @Override
     public String toString() {
-        return "nome = " + nome +", cor = " + cor +
+        return "nome = " + nome + ", cor = " + cor +
                 ", idade = " + idade;
     }
 
@@ -60,7 +64,7 @@ class Gato {
     }
 }
 
-class ComparatorIdade implements Comparator<Gato>{
+class ComparatorIdade implements Comparator<Gato> {
     @Override
     public int compare(Gato o1, Gato o2) {
         return Integer.compare(o1.getIdade(), o2.getIdade());
