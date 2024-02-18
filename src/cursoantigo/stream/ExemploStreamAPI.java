@@ -2,6 +2,7 @@ package cursoantigo.stream;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class ExemploStreamAPI {
@@ -12,13 +13,16 @@ public class ExemploStreamAPI {
          */
     public static void main(String[] args) {
         System.out.println("--\tImprimindo todos os itens da lista de String\t--");
-        List<String> numeros = Arrays.asList("8", "5", "7", "3", "2", "1", "6");
-        numeros.forEach(System.out::println);
+        List<String> numerosListString = Arrays.asList("8", "5", "7", "3", "2", "1", "6", "9");
+        numerosListString.forEach(System.out::println);
+        System.out.println("=============================================================================");
 
         System.out.println("--\tColocando os 5 primeiros números em um Set\t--");
-        numeros.stream().limit(5).collect(Collectors.toSet()).forEach(System.out::println);
+        Set<String> stringSet = numerosListString.stream().limit(5).collect(Collectors.toSet());
+        System.out.println(stringSet);
+        System.out.println("=============================================================================");
         /*
-        Set<String> collectSet = numeros.stream().limit(5).collect(Collectors.toSet());
+        Set<String> collectSet = numerosListString.stream().limit(5).collect(Collectors.toSet());
         System.out.println(collectSet);
         primeiro é estabelecido o limite dos elementos que serão usados com o método limit, depois é usado o método
         collect e, com a classe Collectors, o método toSet e o forEach com método de referência para a saída do Set
@@ -26,6 +30,12 @@ public class ExemploStreamAPI {
 
 
         System.out.println("--\tTransformando a lista de String em uma lista de inteiros\t--");
+        List<Integer> integerList = numerosListString.stream()
+                .map(Integer::parseInt)
+                .toList();
+        System.out.println(integerList);
+        System.out.println("=============================================================================");
+
 
     }
 }
