@@ -3,8 +3,6 @@ package cursoantigo.stream;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
-import java.util.function.DoubleConsumer;
-import java.util.function.ToIntFunction;
 import java.util.stream.Collectors;
 
 public class ExemploStreamAPI {
@@ -49,20 +47,15 @@ public class ExemploStreamAPI {
         System.out.println("=============================================================================");
 
         System.out.println("--\tMostrando a média dos números\t--");
-        numerosListString.stream().mapToInt(new ToIntFunction<String>() { // mapToInt() serve para trabalhar com cada um
-                                                                          // dos valores presentes na lista e fazer
-                                                                          // alterações
-            // TODO entender que porra é essa
-            @Override
-            public int applyAsInt(String value) {
-                return Integer.parseInt(value);
-            }
-        }).average().ifPresent(new DoubleConsumer() {
-            @Override
-            public void accept(double value) {
-                System.out.println(value);
-            }
-        });
+        numerosListString.stream()
+                .mapToInt(Integer::parseInt)
+                // mapToInt() serve para trabalhar com cada um dos valores presentes na lista e fazer alterações
+                .average()
+                // retorna um OptionalDouble contendo a média dos elementos da Stream
+                .ifPresent(System.out::println); // se for presente, o ifPresent() retorna a média
         System.out.println("=============================================================================");
+
+
+        // TODO System.out.println("--\tRemovendo os valores ímpares\t--");
     }
 }
