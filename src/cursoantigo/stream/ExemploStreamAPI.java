@@ -55,7 +55,8 @@ public class ExemploStreamAPI {
                 .ifPresent(System.out::println); // se for presente, o ifPresent() retorna a média
         System.out.println("=============================================================================");
 
+        System.out.println("--\tRemovendo os valores ímpares\t--");
+        numerosInteirosParesM2.stream();
 
-        // TODO System.out.println("--\tRemovendo os valores ímpares\t--");
     }
 }
