@@ -1,9 +1,12 @@
 import java.text.NumberFormat;
 import java.util.Locale;
 
- public class TesteFormatador {
+ public class FormatadorAleatorio {
     public static void main(String[] args) {
-        double numero = 9616621.0;
+        double numero = (Math.random()* 10); // o método Random retorna um número double aleatório entre 0 e 1
+        // para definir o range do seu número aleatório, é preciso multiplicar o retorno de Random pelo número máximo
+        // ex: int numeroAleatorio = min + (int)(Math.random() * (max - min));
+
         NumberFormat formatador = NumberFormat.getInstance(Locale.getDefault());
         /*
          * NumberFormat is the abstract base class for all number formats. This class

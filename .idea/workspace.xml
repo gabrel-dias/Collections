@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9bef46d8-8389-464d-a950-9374fccf091b" name="Changes" comment="impares.stream()">
+      <change beforePath="$PROJECT_DIR$/src/TesteFormatador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TesteFormatador.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "gabrel-dias"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Dias9K/Collections",
+    "accountId": "905ea664-a8af-4d54-8e73-c4cd82e42931"
+  }
+}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$PROJECT_DIR$/../../../../../Program Files/Java/jdk-17/lib/src.zip!/java.base/java/util/Comparator.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2cL64eeT4RVd8G5MDyA83TTvazU" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.Agenda.executor": "Run",
+    "Application.ComClasseAnonima.executor": "Run",
+    "Application.ExemploStreamAPI.executor": "Run",
+    "Application.TesteFormatador.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/gabri/Desktop/Programação/Collections",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gabri\Desktop\Programação\Collections\src\cursoantigo\stream" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="git pull" />
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9bef46d8-8389-464d-a950-9374fccf091b" name="Changes" comment="" />
+      <created>1707878321416</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1707878321416</updated>
+    </task>
+    <task id="LOCAL-00001" summary="arrumado?">
+      <option name="closed" value="true" />
+      <created>1707878450696</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1707878450696</updated>
+    </task>
+    <task id="LOCAL-00002" summary="teste">
+      <option name="closed" value="true" />
+      <created>1707878606968</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707878606968</updated>
+    </task>
+    <task id="LOCAL-00003" summary="lambda">
+      <option name="closed" value="true" />
+      <created>1707883740759</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1707883740759</updated>
+    </task>
+    <task id="LOCAL-00004" summary="remoção classesComparadoras">
+      <option name="closed" value="true" />
+      <created>1708046553137</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1708046553137</updated>
+    </task>
+    <task id="LOCAL-00005" summary="recuperações anômimas">
+      <option name="closed" value="true" />
+      <created>1708051092843</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1708051092844</updated>
+    </task>
+    <task id="LOCAL-00006" summary="recomeçando lambdas">
+      <option name="closed" value="true" />
+      <created>1708055932775</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708055932776</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="arrumado?" />
+    <MESSAGE value="teste" />
+    <MESSAGE value="lambda" />
+    <MESSAGE value="remoção classesComparadoras" />
+    <MESSAGE value="recuperações anômimas" />
+    <MESSAGE value="recomeçando lambdas" />
+    <MESSAGE value="impares.stream()" />
+    <option name="LAST_COMMIT_MESSAGE" value="impares.stream()" />
+  </component>
+</project>
