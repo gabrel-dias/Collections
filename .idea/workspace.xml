@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bef46d8-8389-464d-a950-9374fccf091b" name="Changes" comment="stream().average()2">
-      <change afterPath="$PROJECT_DIR$/src/cursonovo/set/OperacoesBasicas/ConjuntoConvidado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cursonovo/set/OperacoesBasicas/Convidado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cursonovo/set/OperacoesBasicas/Convidado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cursonovo/set/OperacoesBasicas/ConjuntoConvidado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cursonovo/set/OperacoesBasicas/ConjuntoConvidado.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,12 +29,12 @@
     &quot;assignee&quot;: &quot;gabrel-dias&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Dias9K/Collections&quot;,
-    &quot;accountId&quot;: &quot;905ea664-a8af-4d54-8e73-c4cd82e42931&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Dias9K/Collections.git",
+    "accountId": "905ea664-a8af-4d54-8e73-c4cd82e42931"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$PROJECT_DIR$/../../../../../Program Files/Java/jdk-17/lib/src.zip!/java.base/java/util/Comparator.java" root0="SKIP_INSPECTION" />
   </component>
