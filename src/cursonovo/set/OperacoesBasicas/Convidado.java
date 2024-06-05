@@ -1,9 +1,10 @@
 package cursonovo.set.OperacoesBasicas;
 
 public class Convidado {
+    // atributos
     private String nome;
     private int codigoConvite;
-    //construtor
+    // construtor
     public Convidado(String nome, int codigoConvite) {
         this.nome = nome;
         this.codigoConvite = codigoConvite;
