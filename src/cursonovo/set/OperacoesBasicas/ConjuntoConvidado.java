@@ -36,4 +36,9 @@ public class ConjuntoConvidado {
     public void exibirConvidados(){
         System.out.println(convidadoSet);
     }
+
+public static void main(String[] args) {
+
+    }
 }
+

@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9bef46d8-8389-464d-a950-9374fccf091b" name="Changes" comment="stream().average()2">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cursonovo/set/OperacoesBasicas/ConjuntoConvidado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cursonovo/set/OperacoesBasicas/ConjuntoConvidado.java" afterDir="false" />
-    </list>
+    <list default="true" id="9bef46d8-8389-464d-a950-9374fccf091b" name="Changes" comment="refazendo os sets porque eu esqueci completamente como funciona as collections" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,12 +26,12 @@
     &quot;assignee&quot;: &quot;gabrel-dias&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Dias9K/Collections.git",
-    "accountId": "905ea664-a8af-4d54-8e73-c4cd82e42931"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Dias9K/Collections.git&quot;,
+    &quot;accountId&quot;: &quot;905ea664-a8af-4d54-8e73-c4cd82e42931&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$PROJECT_DIR$/../../../../../Program Files/Java/jdk-17/lib/src.zip!/java.base/java/util/Comparator.java" root0="SKIP_INSPECTION" />
   </component>
@@ -160,6 +157,7 @@
     <MESSAGE value="recomeçando lambdas" />
     <MESSAGE value="impares.stream()" />
     <MESSAGE value="stream().average()2" />
-    <option name="LAST_COMMIT_MESSAGE" value="stream().average()2" />
+    <MESSAGE value="refazendo os sets porque eu esqueci completamente como funciona as collections" />
+    <option name="LAST_COMMIT_MESSAGE" value="refazendo os sets porque eu esqueci completamente como funciona as collections" />
   </component>
 </project>
