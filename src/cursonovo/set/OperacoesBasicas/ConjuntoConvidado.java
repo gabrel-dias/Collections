@@ -1,5 +1,7 @@
 package cursonovo.set.OperacoesBasicas;
 
+import cursonovo.exercicios.set.basicas.ConjuntoConvidados;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -34,11 +36,20 @@ public class ConjuntoConvidado {
     }
 
     public void exibirConvidados(){
-        System.out.println(convidadoSet);
+        if (!convidadoSet.isEmpty()){
+            System.out.println(convidadoSet);
+        } else System.out.println("A lista de convidados está vazia!");
     }
 
 public static void main(String[] args) {
-
+    ConjuntoConvidado conjunto = new ConjuntoConvidado();
+    conjunto.adicionarConvidados("Sebastian", 123);
+    conjunto.adicionarConvidados("Sebastian", 123);
+    System.out.println("Existem " + conjunto.contarConvidados() + " convidados na festa");
+    conjunto.exibirConvidados();
+    conjunto.removerConvidadoPorCodigo(123);
+    System.out.println("Existem " + conjunto.contarConvidados() + " convidados na festa");
+    conjunto.exibirConvidados();
     }
 }
 
