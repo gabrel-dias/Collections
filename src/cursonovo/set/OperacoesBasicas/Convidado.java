@@ -3,46 +3,40 @@ package cursonovo.set.OperacoesBasicas;
 import java.util.Objects;
 
 public class Convidado {
-    // atributos
-    private String nome;
-    private int codigoConvite;
-    // construtor
-    public Convidado(String nome, int codigoConvite) {
-        this.nome = nome;
-        this.codigoConvite = codigoConvite;
-    }
-// getters e setters
-    public String getNome() {
-        return nome;
-    }
+  //atributos
+  private String nome;
+  private int codigoConvite;
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+  public Convidado(String nome, int codigoConvite) {
+    this.nome = nome;
+    this.codigoConvite = codigoConvite;
+  }
 
-    public int getCodigoConvite() {
-        return codigoConvite;
-    }
+  public String getNome() {
+    return nome;
+  }
 
-    public void setCodigoConvite(int codigoConvite) {
-        this.codigoConvite = codigoConvite;
-    }
+  public int getCodigoConvite() {
+    return codigoConvite;
+  }
 
-    @Override
-    public String toString() {
-        return                 "Nome = " + nome +
-                ", Código = " + codigoConvite;
-    }
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (!(o instanceof Convidado convidado)) return false;
+    return getCodigoConvite() == convidado.getCodigoConvite();
+  }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Convidado convidado)) return false;
-        return getCodigoConvite() == convidado.getCodigoConvite();
-    }
+  @Override
+  public int hashCode() {
+    return Objects.hash(getCodigoConvite());
+  }
 
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(getCodigoConvite());
-    }
+  @Override
+  public String toString() {
+    return "Convidado{" +
+        "nome='" + nome + '\'' +
+        ", codigoConvite=" + codigoConvite +
+        '}';
+  }
 }
