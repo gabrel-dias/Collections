@@ -22,11 +22,18 @@ public class CadastroProdutos {
 
     public Set<Produto> exibirProdutosPreco() {
         Set<Produto> produtosPreco = new TreeSet<>(new ComparatorPreco());
-        produtoSet.addAll(produtoSet);
+        produtosPreco.addAll(produtoSet);
         return produtosPreco;
     }
 
     public static void main(String[] args) {
         CadastroProdutos cadastro = new CadastroProdutos();
+
+        cadastro.adicionarProduto("tomate", 12, 1.50, 2);
+        cadastro.adicionarProduto("banana", 112, 1.20, 6);
+        cadastro.adicionarProduto("melancia", 13, 5.30, 4);
+        cadastro.adicionarProduto("batata", 14, 3d, 5);
+        System.out.println(cadastro.exibirProdutosNome());
+        System.out.println(cadastro.exibirProdutosPreco());
     }
 }
