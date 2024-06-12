@@ -2,7 +2,6 @@ package cursonovo.set.Ordenacao;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class CadastroProdutos {
@@ -21,8 +20,13 @@ public class CadastroProdutos {
         return produtosNome;
     }
 
-     public Set<Produto> exibirProdutosPreco() {
+    public Set<Produto> exibirProdutosPreco() {
         Set<Produto> produtosPreco = new TreeSet<>(new ComparatorPreco());
         produtoSet.addAll(produtoSet);
         return produtosPreco;
-}}
+    }
+
+    public static void main(String[] args) {
+        CadastroProdutos cadastro = new CadastroProdutos();
+    }
+}
